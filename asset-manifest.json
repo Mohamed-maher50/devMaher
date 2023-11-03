@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/devMaher/static/css/main.eee7aa33.css",
+    "main.js": "/devMaher/static/js/main.d237b60d.js",
+    "index.html": "/devMaher/index.html",
+    "main.eee7aa33.css.map": "/devMaher/static/css/main.eee7aa33.css.map",
+    "main.d237b60d.js.map": "/devMaher/static/js/main.d237b60d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eee7aa33.css",
+    "static/js/main.d237b60d.js"
+  ]
+}
