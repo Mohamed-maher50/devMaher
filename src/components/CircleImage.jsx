@@ -13,7 +13,7 @@ const CircleImage = ({ customStyle }) => {
       variants={scaleVariant}
       initial="initial"
       animate="animate"
-      src="/hero.jpg"
+      src="/devMaher/hero.jpg"
       alt="mohamed maher"
       className={`h-64 w-64 border-secondary border-4 rounded-full ml-auto overflow-hidden shadow-xl ${customStyle} `}
     />

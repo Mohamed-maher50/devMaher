@@ -32,7 +32,7 @@ const variantsContainer = {
 const Header = () => {
   return (
     <div className="container mx-auto py-16 overflow-hidden capitalize">
-      <div className="grid grid-cols-3 text-center lg:text-start  gap-4 ">
+      <div className="grid grid-cols-3 text-center md:text-start  gap-4 ">
         <motion.strong
           variants={variantsContainer.down}
           initial="start"
