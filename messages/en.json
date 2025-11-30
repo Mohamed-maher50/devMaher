@@ -1,0 +1,192 @@
+{
+  "profile": {
+    "bio": "Front-End Developer specializing in modern web technologies, with a strong focus on React, Next.js, and building scalable applications.",
+    "email": "mohamedmaher.mm330@gmail.com",
+    "location": "Egypt, Elshrqia",
+    "name": "Mohamed Maher",
+    "social": {
+      "github": "github.com",
+      "linkedin": "https://www.linkedin.com/in/mohamed-maher-2937a1204/",
+      "twitter": "twitter.com"
+    },
+    "title": "Front End Developer"
+  },
+  "Header": {
+    "title": "Hi 👋 My Name Is <span class='accent'> Mohamed Maher<span>",
+    "about": "Front End developer "
+  },
+  "UserProfile": {
+    "title": "Hello {firstName}"
+  },
+  "Skills": {
+    "title": "Skills"
+  },
+  "project:title": "What I’ve Built",
+  "demo": "demo",
+  "projects": {
+    "subtitle": "Featured Projects",
+    "data": [
+      {
+        "imgUrl": "https://images.pexels.com/photos/19249511/pexels-photo-19249511/free-photo-of-rowan-berries-and-leaves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "demoLink": "https://pexels-navy.vercel.app/",
+        "description": " Discover seamless access to a vast library of royalty-free images and videos, explore endlessly with React Infinite Scroll, enjoy lightning-fast load times and responsive design, immerse yourself in captivating videos, personalize your browsing journey with color filters, and effortlessly download your favorites with one click.",
+        "title": "image stock",
+        "technologies": [
+          "Tailwind CSS",
+          "Responsive",
+          "Infinity scroll",
+          "lazy loading",
+          "pexels api",
+          "React",
+          "responsive masonry",
+          "react-player "
+        ]
+      },
+      {
+        "imgUrl": "https://images.pexels.com/photos/1824392/pexels-photo-1824392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "demoLink": "https://www.dialmasterssolutions.com/",
+        "description": " provides virtual assistants who have at least 3 years experience in the real estate industry, and can get you more qualified leads from calling your data lists. Proven model for scaling brokerages & Wholesaling Operations.",
+        "title": "property hunters",
+        "technologies": [
+          "Tailwind CSS",
+          "Responsive",
+          "react-hook-form",
+          "react-toastify",
+          "React",
+          "flowbite-react",
+          "aos"
+        ]
+      },
+      {
+        "imgUrl": "https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "demoLink": "https://gilded-cat-f97c21.netlify.app/",
+        "description": "Welcome to MaherShop - your one-stop destination for online shopping! Discover a wide array of products, seamless navigation, and secure transactions. Shop confidently with Google login, swift checkout via Stripe, and a user-friendly shopping cart. Enjoy a hassle-free shopping experience with advanced filtration, robust search, and easy management of products.",
+        "title": "Maher shop",
+        "technologies": [
+          "RESTAPI",
+          "Responsive",
+          "nodejs",
+          "cloudinary",
+          "multer",
+          "mongodb",
+          "stripe",
+          "Tailwind CSS",
+          "DaisyUI",
+          "firebase auth"
+        ]
+      },
+      {
+        "imgUrl": "/projects/gym.png",
+        "demoLink": "https://65bf90353c6c595d54c656dd--zingy-kataifi-4e33e0.netlify.app/",
+        "description": "React Website with Material-UI (MUI) Integration Welcome to our latest project, a dynamic and visually appealing website built with React, showcasing the seamless integration of Material-UI (MUI) components and API exercises.",
+        "title": "Fitness Club",
+        "technologies": ["Material-UI", "RESTAPI", "Responsive"]
+      },
+      {
+        "imgUrl": "https://images.unsplash.com/photo-1615986201152-7686a4867f30?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "demoLink": "https://cinema-hub-nine.vercel.app/",
+        "description": "React application that seamlessly integrates React-Player, Redux state management, Tailwind CSS, DaisyUI components, and the powerful TMDB API. This comprehensive web application delivers an immersive multimedia experience and showcases the synergy of cutting-edge technologies.",
+        "title": "Cinema Hub",
+        "technologies": [
+          "Redux",
+          "RESTAPI",
+          "React-Player",
+          "Tailwind CSS",
+          "DaisyUI",
+          "Responsive"
+        ]
+      },
+      {
+        "imgUrl": "https://images.pexels.com/photos/19577862/pexels-photo-19577862/free-photo-of-studio-shot-of-a-pair-of-black-sports-shoes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "demoLink": "https://mohamed-maher50.github.io/dragon/",
+        "description": " immersive online shoe store crafted with React, Tailwind CSS, i18n-next for internationalization, and AOS animations. This dynamic web application combines seamless language localization, captivating animations, and responsive design to offer a modern and user-friendly online shopping experience.",
+        "title": "dragon shoes",
+        "technologies": [
+          "Tailwind CSS",
+          "Responsive",
+          "aos animation",
+          "i18n next"
+        ]
+      },
+      {
+        "imgUrl": "https://i.pinimg.com/736x/c5/78/1d/c5781d72c1298dc869b74702b4ee42a0.jpg",
+        "demoLink": "https://to-do-app-react-ezt9r9u8u-mohamedmaher50s-projects.vercel.app/",
+        "description": " Todo App crafted with Node.js, Express, React, Tailwind CSS, and Framer Motion. This dynamic web application combines the robustness of server-side logic, seamless client-server communication, responsive design, and interactive animations to provide users with an exceptional task management experience.",
+        "title": "taskedo",
+        "technologies": [
+          "nodejs",
+          "express",
+          "Tailwind CSS",
+          "Responsive",
+          "framer motion",
+          "rest api"
+        ]
+      }
+    ],
+    "buttonDemo": "demo"
+  },
+  "contact": {
+    "name": "Name",
+    "subtitle": "I’d love to hear from you! Whether you have a project idea, a question, or just want to say hi, send me a message and I’ll get back to you as soon as possible.",
+    "namePlaceholder": "kareem ahmed",
+    "optional": "Optional",
+    "title": "Get in touch",
+    "email": "Your email",
+    "emailPlaceholder": "Enter your email",
+    "messagePlaceholder": "Leave your message",
+    "send": "Send your message",
+    "sending": "Sending...",
+    "message": "Your message",
+    "emailError": "Please enter a valid email address",
+    "messageError": "Message must be at least 10 characters long",
+    "successMessage": "✓ Your message has been sent successfully! Thank you for reaching out.",
+    "errorMessage": "⚠ There was an error sending your message. Please try again."
+  },
+  "nav": {
+    "sections": {
+      "home": "Home",
+      "projects": "Projects",
+      "contact": "contact",
+      "skills": "skills"
+    }
+  },
+  "skills:title": "Skills & Expertise",
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "React", "level": 20 },
+        { "name": "Next.js", "level": 30 },
+        { "name": "TypeScript", "level": 50 },
+        { "name": "Tailwind CSS", "level": 90 }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Node.js", "level": 30 },
+        { "name": "Python", "level": 80 },
+        { "name": "PostgreSQL", "level": 60 },
+        { "name": "MongoDB", "level": 43 }
+      ]
+    },
+    {
+      "category": "tools & platforms",
+      "items": [
+        { "name": "Node.js", "level": 44 },
+        { "name": "Python", "level": 22 },
+        { "name": "PostgreSQL", "level": 10 },
+        { "name": "MongoDB", "level": 80 }
+      ]
+    },
+    {
+      "category": "design",
+      "items": [
+        { "name": "Node.js", "level": 3 },
+        { "name": "Python", "level": 11 },
+        { "name": "PostgreSQL", "level": 40 },
+        { "name": "MongoDB", "level": 35 }
+      ]
+    }
+  ]
+}

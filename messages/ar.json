@@ -1,0 +1,191 @@
+{
+  "profile": {
+    "bio": "مطوّر واجهات أمامية (Front-End) متخصص في تقنيات الويب الحديثة، مع تركيز قوي على React و Next.js وبناء تطبيقات قابلة للتطوير.",
+    "email": "mohamedmaher.mm330@gmail.com",
+    "location": "مصر، الشرقية",
+    "name": "محمد ماهر عبد العزيز",
+    "social": {
+      "github": "https://github.com/Mohamed-maher50/",
+      "linkedin": "https://www.linkedin.com/in/mohamed-maher-2937a1204/",
+      "twitter": "twitter.com"
+    },
+    "title": "مطوّر واجهات أمامية"
+  },
+  "Header": {
+    "title": "السلام عليكم👋 انا<span class='accent'> محمد ماهر<span>",
+    "about": "مطور الواجهة الأمامية"
+  },
+  "Skills": {
+    "title": "المهارات"
+  },
+  "project:title": "ما الذي أنجزته",
+  "demo": "تجربة",
+
+  "projects": {
+    "subtitle": "المشاريع",
+    "data": [
+      {
+        "imgUrl": "https://images.pexels.com/photos/19249511/pexels-photo-19249511/free-photo-of-rowan-berries-and-leaves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "demoLink": "https://pexels-navy.vercel.app/",
+        "description": " اكتشف الوصول السلس إلى مكتبة واسعة من الصور ومقاطع الفيديو الخالية من حقوق الملكية، واستكشف ما لا نهاية باستخدام React Infinite Scroll، واستمتع بأوقات تحميل فائقة السرعة وتصميم سريع الاستجابة، وانغمس في مقاطع فيديو جذابة، وقم بتخصيص رحلة التصفح الخاصة بك باستخدام مرشحات الألوان، وقم بتنزيل جهازك بسهولة المفضلة بنقرة واحدة.",
+        "title": "image stock",
+        "technologies": [
+          "Tailwind CSS",
+          "Responsive",
+          "Infinity scroll",
+          "lazy loading",
+          "pexels api",
+          "React",
+          "responsive masonry",
+          "react-player "
+        ]
+      },
+      {
+        "imgUrl": "https://images.pexels.com/photos/1824392/pexels-photo-1824392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "demoLink": "https://www.dialmasterssolutions.com/",
+        "description": "يوفر لك مساعدين افتراضيين يتمتعون بخبرة لا تقل عن 3 سنوات في مجال العقارات، ويمكنهم الحصول على المزيد من العملاء المحتملين المؤهلين من خلال الاتصال بقوائم البيانات الخاصة بك. نموذج مثبت لتوسيع نطاق شركات الوساطة وعمليات البيع بالجملة.",
+        "title": "property hunters",
+        "technologies": [
+          "Tailwind CSS",
+          "Responsive",
+          "react-hook-form",
+          "react-toastify",
+          "React",
+          "flowbite-react",
+          "aos"
+        ]
+      },
+      {
+        "imgUrl": "https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "demoLink": "https://gilded-cat-f97c21.netlify.app/",
+        "description": "مرحبًا بك في MaherShop - وجهتك الشاملة للتسوق عبر الإنترنت! اكتشف مجموعة واسعة من المنتجات والتنقل السلس والمعاملات الآمنة. تسوق بثقة من خلال تسجيل الدخول إلى Google، والخروج السريع عبر Stripe، وعربة التسوق سهلة الاستخدام. استمتع بتجربة تسوق خالية من المتاعب مع التصفية المتقدمة والبحث القوي والإدارة السهلة للمنتجات.",
+        "title": "Maher shop",
+        "technologies": [
+          "RESTAPI",
+          "Responsive",
+          "nodejs",
+          "cloudinary",
+          "multer",
+          "mongodb",
+          "stripe",
+          "Tailwind CSS",
+          "DaisyUI",
+          "firebase auth"
+        ]
+      },
+      {
+        "imgUrl": "/projects/gym.png",
+        "demoLink": "https://65bf90353c6c595d54c656dd--zingy-kataifi-4e33e0.netlify.app/",
+        "description": "موقع React مع تكامل Material-UI (MUI) مرحبًا بك في أحدث مشروع لدينا، وهو موقع ويب ديناميكي وجذاب بصريًا تم إنشاؤه باستخدام React، ويعرض  السلس لمكونات Material-UI (MUI) وتمارين API.",
+        "title": "Fitness Club",
+        "technologies": ["Material-UI", "RESTAPI", "Responsive"]
+      },
+      {
+        "imgUrl": "https://images.unsplash.com/photo-1615986201152-7686a4867f30?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "demoLink": "https://cinema-hub-nine.vercel.app/",
+        "description": "تطبيق React الذي يدمج بسلاسة React-Player، وإدارة حالة Redux، وTailwind CSS، ومكونات DaisyUI، وTMDB API القوية. يوفر تطبيق الويب الشامل هذا تجربة وسائط متعددة غامرة ويعرض التآزر بين التقنيات المتطورة.",
+        "title": "Cinema Hub",
+        "technologies": [
+          "Redux",
+          "RESTAPI",
+          "React-Player",
+          "Tailwind CSS",
+          "DaisyUI",
+          "Responsive"
+        ]
+      },
+      {
+        "imgUrl": "https://images.pexels.com/photos/5517156/pexels-photo-5517156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "demoLink": "https://mohamed-maher50.github.io/dragon/",
+        "description": " متجر أحذية شامل عبر الإنترنت تم تصميمه باستخدام React وTailwind CSS وi18n-next للتدويل والرسوم المتحركة AOS. يجمع تطبيق الويب الديناميكي هذا بين الترجمة السلسة للغة والرسوم المتحركة الجذابة والتصميم سريع الاستجابة لتقديم تجربة تسوق حديثة وسهلة الاستخدام عبر الإنترنت.",
+        "title": "dragon shoes",
+        "technologies": [
+          "Tailwind CSS",
+          "Responsive",
+          "aos animation",
+          "i18n next"
+        ]
+      },
+      {
+        "imgUrl": "https://i.pinimg.com/736x/c5/78/1d/c5781d72c1298dc869b74702b4ee42a0.jpg",
+        "demoLink": "https://to-do-app-react-ezt9r9u8u-mohamedmaher50s-projects.vercel.app/",
+        "description": " تم تصميم تطبيق Todo باستخدام Node.js وExpress وReact وTailwind CSS وFramer Motion. يجمع تطبيق الويب الديناميكي هذا بين قوة المنطق من جانب الخادم، والتواصل السلس بين العميل والخادم، والتصميم سريع الاستجابة، والرسوم المتحركة التفاعلية لتزويد المستخدمين بتجربة استثنائية لإدارة المهام.",
+        "title": "taskedo",
+        "technologies": [
+          "nodejs",
+          "express",
+          "Tailwind CSS",
+          "Responsive",
+          "framer motion",
+          "rest api"
+        ]
+      }
+    ],
+    "buttonDemo": "عرض تجربي"
+  },
+  "contact": {
+    "name": "الاسم",
+    "subtitle": "نفسي أسمع منك! لو عندك فكرة مشروع، أو سؤال، أو حتى حابب تقول سلام، ابعتلي رسالة من قلبك وهرجعلك بأسرع وقت. 💌",
+    "namePlaceholder": "كريم احمد",
+    "optional": "اختياري",
+    "title": "تواصل معي",
+    "email": "بريدك الالكتروني",
+    "emailPlaceholder": "اكنب بريدك",
+    "messagePlaceholder": "اترك رسالتك",
+    "send": " إرسال رسالتك",
+    "sending": "...جري الاسال",
+    "message": "رسالتك",
+    "emailError": "من فضلك أدخل بريد إلكتروني صحيح",
+    "messageError": "الرسالة يجب أن تكون 10 أحرف على الأقل",
+    "successMessage": "✓ تم إرسال رسالتك بنجاح. شكرًا لتواصلك معنا!",
+    "errorMessage": "⚠ حدث خطأ أثناء إرسال الرسالة، حاول مرة أخرى."
+  },
+
+  "nav": {
+    "sections": {
+      "home": "الرئيسية",
+      "projects": "المشاريع",
+      "contact": "اتصل بي",
+      "skills": "المهارات"
+    }
+  },
+  "skills:title": "المهارات والخبرات",
+  "skills": [
+    {
+      "category": "الواجهة الأمامية",
+      "items": [
+        { "name": "React", "level": 20 },
+        { "name": "Next.js", "level": 30 },
+        { "name": "TypeScript", "level": 50 },
+        { "name": "Tailwind CSS", "level": 90 }
+      ]
+    },
+    {
+      "category": "الخلفية",
+      "items": [
+        { "name": "Node.js", "level": 30 },
+        { "name": "Python", "level": 80 },
+        { "name": "PostgreSQL", "level": 60 },
+        { "name": "MongoDB", "level": 43 }
+      ]
+    },
+    {
+      "category": "الأدوات والمنصات",
+      "items": [
+        { "name": "Git", "level": 44 },
+        { "name": "Docker", "level": 22 },
+        { "name": "AWS", "level": 10 },
+        { "name": "Vercel", "level": 80 }
+      ]
+    },
+    {
+      "category": "التصميم",
+      "items": [
+        { "name": "Figma", "level": 3 },
+        { "name": "UI/UX", "level": 11 },
+        { "name": "Framer Motion", "level": 40 },
+        { "name": "الرسوم المتحركة على الويب", "level": 35 }
+      ]
+    }
+  ]
+}

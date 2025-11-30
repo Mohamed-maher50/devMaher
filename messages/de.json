@@ -1,0 +1,42 @@
+{
+  "profile": {
+    "bio": "Front-End-Entwickler, spezialisiert auf moderne Webtechnologien, mit starkem Fokus auf React, Next.js und den Aufbau skalierbarer Anwendungen.",
+    "email": "mohamedmaher.mm330@gmail.com",
+    "location": "Ägypten, Elshrqia",
+    "name": "Mohamed Maher",
+    "social": {
+      "github": "https://github.com/Mohamed-maher50/",
+      "linkedin": "https://www.linkedin.com/in/mohamed-maher-2937a1204/",
+      "twitter": "twitter.com"
+    },
+    "title": "Front-End-Entwickler"
+  },
+  "skills:title": "Fähigkeiten & Expertise",
+  "projects:title": "Was ich gebaut habe",
+  "demo": "demo",
+  "contact": {
+    "name": "Name",
+    "subtitle": "Ich freue mich, von Ihnen zu hören! Egal, ob Sie eine Projektidee, eine Frage haben oder einfach nur Hallo sagen möchten – senden Sie mir eine Nachricht und ich antworte so schnell wie möglich.",
+    "namePlaceholder": "Max Mustermann",
+    "optional": "Optional",
+    "title": "Contactez-moi",
+    "email": "Votre email",
+    "emailPlaceholder": "Entrez votre email",
+    "messagePlaceholder": "Laissez votre message",
+    "send": "Sende deine Nachricht",
+    "sending": "Wird gesendet...",
+    "message": "Votre message",
+    "emailError": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "messageError": "Die Nachricht muss mindestens 10 Zeichen lang sein",
+    "successMessage": "✓ Ihre Nachricht wurde erfolgreich gesendet! Vielen Dank für Ihre Kontaktaufnahme.",
+    "errorMessage": "⚠ Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "nav": {
+    "sections": {
+      "home": "Startseite",
+      "projects": "Projekte",
+      "contact": "Kontakt",
+      "skills": "Fähigkeiten"
+    }
+  }
+}

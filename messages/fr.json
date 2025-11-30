@@ -1,0 +1,80 @@
+{
+  "profile": {
+    "bio": "Développeur Front-End spécialisé dans les technologies web modernes, avec un accent particulier sur React, Next.js et la création d'applications évolutives.",
+    "email": "mohamedmaher.mm330@gmail.com",
+    "location": "Égypte, Elshrqia",
+    "name": "Mohamed Maher",
+    "social": {
+      "github": "https://github.com/Mohamed-maher50/",
+      "linkedin": "https://www.linkedin.com/in/mohamed-maher-2937a1204/",
+      "twitter": "twitter.com"
+    },
+    "title": "Développeur Front-End"
+  },
+  "skills:title": "Compétences & Expertise",
+  "demo": "Démo",
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "React", "level": 20 },
+        { "name": "Next.js", "level": 30 },
+        { "name": "TypeScript", "level": 50 },
+        { "name": "Tailwind CSS", "level": 90 }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Node.js", "level": 30 },
+        { "name": "Python", "level": 80 },
+        { "name": "PostgreSQL", "level": 60 },
+        { "name": "MongoDB", "level": 43 }
+      ]
+    },
+    {
+      "category": "Outils & Plateformes",
+      "items": [
+        { "name": "Git", "level": 44 },
+        { "name": "Docker", "level": 22 },
+        { "name": "AWS", "level": 10 },
+        { "name": "Vercel", "level": 80 }
+      ]
+    },
+    {
+      "category": "Design",
+      "items": [
+        { "name": "Figma", "level": 3 },
+        { "name": "UI/UX", "level": 11 },
+        { "name": "Framer Motion", "level": 40 },
+        { "name": "Animation Web", "level": 35 }
+      ]
+    }
+  ],
+  "contact": {
+    "name": "Nom",
+    "subtitle": "Je serais ravi d’avoir de vos nouvelles ! Que vous ayez une idée de projet, une question ou simplement envie de dire bonjour, envoyez-moi un message et je vous répondrai dès que possible.",
+    "namePlaceholder": "Jean Dupont",
+    "optional": "Optionnel",
+    "title": "Contactez-moi",
+    "email": "Votre email",
+    "emailPlaceholder": "Entrez votre email",
+    "messagePlaceholder": "Laissez votre message",
+    "send": "Envoyez votre message",
+    "sending": "Envoi...",
+    "message": "Votre message",
+    "emailError": "Veuillez entrer une adresse e-mail valide",
+    "messageError": "Le message doit contenir au moins 10 caractères",
+    "successMessage": "✓ Votre message a été envoyé avec succès ! Merci de nous avoir contactés.",
+    "errorMessage": "⚠ Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer."
+  },
+  "project:title": "Ce que j’ai construit",
+  "nav": {
+    "sections": {
+      "home": "Accueil",
+      "projects": "Projets",
+      "contact": "Contact",
+      "skills": "Compétences"
+    }
+  }
+}
