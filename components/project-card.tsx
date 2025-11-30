@@ -62,12 +62,11 @@ export function ProjectCard({
         transition={{ type: "spring", stiffness: 80, damping: 20 }}
         className="group sticky  top-1/2 -translate-y-1/2  flex flex-col overflow-hidden rounded-xl  hover:shadow-2xl"
       >
-        <div className="relative  w-full overflow-hidden bg-muted sm:h-112 md:h-128">
+        <div className="relative min-h-72 h-full w-full overflow-hidden bg-muted sm:h-52  md:h-128">
           <Image
             src={image || "/placeholder.svg"}
             alt={imageAlt}
-            width={1216}
-            height={512}
+            fill
             className="object-cover "
           />
 
@@ -85,7 +84,7 @@ export function ProjectCard({
         "
           />
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-center">
+          <div className="absolute   inset-0 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-center">
             <motion.h2
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
