@@ -11,7 +11,7 @@ const HeadingLamp = async () => {
           repeatType: "reverse",
           ease: "easeInOut",
         }}
-        className="origin-top  not-dark:transform-none! flex flex-col items-center"
+        className="origin-top  relative not-dark:transform-none! flex flex-col items-center"
       >
         {/* The Cord */}
         <div className="h-20 w-0.5 bg-linear-to-b from-border to-zinc-800 dark:to-zinc-400" />
