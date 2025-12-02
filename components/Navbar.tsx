@@ -12,6 +12,7 @@ import { DarkModeToggle } from "./DarkModeTaggle";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { Link as ScrollLink } from "react-scroll";
+import { MobileLanguageSwitcher } from "./MobileLanguageSwitcher";
 export interface NavLink {
   id: string;
   label: string;
@@ -100,7 +101,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, navLinks }) => {
           </nav>
           <div className="h-6 w-px bg-border hidden md:block"></div>
 
-          <LanguageSwitcher />
+          <div className="max-sm:hidden">
+            <LanguageSwitcher />
+          </div>
+          <div className="sm:hidden">
+            <MobileLanguageSwitcher />
+          </div>
           <DarkModeToggle />
 
           <Button

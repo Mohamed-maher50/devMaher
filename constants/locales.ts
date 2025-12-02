@@ -13,4 +13,12 @@ export const languages = Object.entries(localeLabels).map(
     label,
   })
 );
+const LANGUAGES_FLAGS = {
+  "en": "English",
+  "ar": "العربية",
+  "fr": "Français",
+  "de": "Deutsch"
+
+}
+export const EXTENDED_LANGUAGES = languages.map((l) => ({ code: l.code, label: LANGUAGES_FLAGS[l.code] }))
 export const defaultLocale: supportedLanguages = "en";

@@ -1,11 +1,9 @@
 "use client";
 import Cookies from "js-cookie";
 import { languages, supportedLanguages } from "@/constants/locales";
-import { Link, useRouter } from "@/lib/i18n/navigation";
+import { useRouter } from "@/lib/i18n/navigation";
 import { motion } from "motion/react";
 import { useLocale } from "next-intl";
-
-const MotionLink = motion.create(Link);
 
 export function LanguageSwitcher() {
   const locale = useLocale();
