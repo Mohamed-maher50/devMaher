@@ -4,17 +4,11 @@ import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import ScrollElementProvider from "./ScrollElementProvider";
-type skillItem = {
-  category: string;
-  items: {
-    name: string;
-    level: number;
-  }[];
-}[];
+import { SKILLS } from "@/constants";
+
 export function SkillsSection() {
   const t = useTranslations();
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const localeSkills: skillItem = t.raw("skills");
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -93,9 +87,9 @@ export function SkillsSection() {
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {localeSkills.map((skillGroup, categoryIdx) => (
+            {SKILLS.map((skillGroup, categoryIdx) => (
               <motion.div
-                key={skillGroup.category}
+                key={skillGroup.localeCategory}
                 className="space-y-6 p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors cursor-pointer"
                 custom={categoryIdx}
                 variants={categoryVariants}
@@ -103,26 +97,32 @@ export function SkillsSection() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 whileHover={{ y: -8 }}
-                onMouseEnter={() => setActiveCategory(skillGroup.category)}
+                onMouseEnter={() =>
+                  setActiveCategory(skillGroup.localeCategory)
+                }
                 onMouseLeave={() => setActiveCategory(null)}
               >
                 <motion.div
                   className="relative"
                   initial={false}
                   animate={{
-                    scale: activeCategory === skillGroup.category ? 1.05 : 1,
+                    scale:
+                      activeCategory === skillGroup.localeCategory ? 1.05 : 1,
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                   <h3 className="text-lg font-sora capitalize rtl:font-cairo font-bold text-primary">
-                    {skillGroup.category}
+                    {/* {skillGroup.localeCategory} */}
+                    {t(skillGroup.localeCategory)}
                   </h3>
                   <motion.div
                     className="absolute bottom-0 left-0 h-1 bg-linear-to-r from-primary to-accent rounded-full"
                     initial={{ width: 0 }}
                     animate={{
                       width:
-                        activeCategory === skillGroup.category ? "100%" : "0%",
+                        activeCategory === skillGroup.localeCategory
+                          ? "100%"
+                          : "0%",
                     }}
                     transition={{ duration: 0.3 }}
                   />
@@ -180,9 +180,14 @@ export function SkillsSection() {
                       key={idx}
                       className="w-1.5 h-1.5 rounded-full bg-primary/40"
                       animate={{
-                        scale: activeCategory === skillGroup.category ? 1.3 : 1,
+                        scale:
+                          activeCategory === skillGroup.localeCategory
+                            ? 1.3
+                            : 1,
                         opacity:
-                          activeCategory === skillGroup.category ? 1 : 0.4,
+                          activeCategory === skillGroup.localeCategory
+                            ? 1
+                            : 0.4,
                       }}
                       transition={{ delay: idx * 0.05 }}
                     />

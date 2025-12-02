@@ -154,43 +154,11 @@ declare const messages: {
     }
   },
   "skills:title": "Skills & Expertise",
-  "skills": [
-    {
-      "category": "Frontend",
-      "items": [
-        { "name": "React", "level": 20 },
-        { "name": "Next.js", "level": 30 },
-        { "name": "TypeScript", "level": 50 },
-        { "name": "Tailwind CSS", "level": 90 }
-      ]
-    },
-    {
-      "category": "Backend",
-      "items": [
-        { "name": "Node.js", "level": 30 },
-        { "name": "Python", "level": 80 },
-        { "name": "PostgreSQL", "level": 60 },
-        { "name": "MongoDB", "level": 43 }
-      ]
-    },
-    {
-      "category": "tools & platforms",
-      "items": [
-        { "name": "Node.js", "level": 44 },
-        { "name": "Python", "level": 22 },
-        { "name": "PostgreSQL", "level": 10 },
-        { "name": "MongoDB", "level": 80 }
-      ]
-    },
-    {
-      "category": "design",
-      "items": [
-        { "name": "Node.js", "level": 3 },
-        { "name": "Python", "level": 11 },
-        { "name": "PostgreSQL", "level": 40 },
-        { "name": "MongoDB", "level": 35 }
-      ]
-    }
-  ]
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools_platforms": "tools & platforms",
+    "design": "Design"
+  }
 };
 export default messages;

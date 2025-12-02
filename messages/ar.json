@@ -150,42 +150,10 @@
     }
   },
   "skills:title": "المهارات والخبرات",
-  "skills": [
-    {
-      "category": "الواجهة الأمامية",
-      "items": [
-        { "name": "React", "level": 20 },
-        { "name": "Next.js", "level": 30 },
-        { "name": "TypeScript", "level": 50 },
-        { "name": "Tailwind CSS", "level": 90 }
-      ]
-    },
-    {
-      "category": "الخلفية",
-      "items": [
-        { "name": "Node.js", "level": 30 },
-        { "name": "Python", "level": 80 },
-        { "name": "PostgreSQL", "level": 60 },
-        { "name": "MongoDB", "level": 43 }
-      ]
-    },
-    {
-      "category": "الأدوات والمنصات",
-      "items": [
-        { "name": "Git", "level": 44 },
-        { "name": "Docker", "level": 22 },
-        { "name": "AWS", "level": 10 },
-        { "name": "Vercel", "level": 80 }
-      ]
-    },
-    {
-      "category": "التصميم",
-      "items": [
-        { "name": "Figma", "level": 3 },
-        { "name": "UI/UX", "level": 11 },
-        { "name": "Framer Motion", "level": 40 },
-        { "name": "الرسوم المتحركة على الويب", "level": 35 }
-      ]
-    }
-  ]
+  "skills": {
+    "frontend": "الواجهة الاماميه",
+    "backend": "الواجهة الخلفية",
+    "tools_platforms": "الادوات و المنصات",
+    "design": "التصميم"
+  }
 }

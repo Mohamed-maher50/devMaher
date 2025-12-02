@@ -39,42 +39,10 @@
       "skills": "Fähigkeiten"
     }
   },
-  "skills": [
-    {
-      "category": "Frontend",
-      "items": [
-        { "name": "React", "level": 20 },
-        { "name": "Next.js", "level": 30 },
-        { "name": "TypeScript", "level": 50 },
-        { "name": "Tailwind CSS", "level": 90 }
-      ]
-    },
-    {
-      "category": "Backend",
-      "items": [
-        { "name": "Node.js", "level": 30 },
-        { "name": "Python", "level": 80 },
-        { "name": "PostgreSQL", "level": 60 },
-        { "name": "MongoDB", "level": 43 }
-      ]
-    },
-    {
-      "category": "Outils & Plateformes",
-      "items": [
-        { "name": "Git", "level": 44 },
-        { "name": "Docker", "level": 22 },
-        { "name": "AWS", "level": 10 },
-        { "name": "Vercel", "level": 80 }
-      ]
-    },
-    {
-      "category": "Design",
-      "items": [
-        { "name": "Figma", "level": 3 },
-        { "name": "UI/UX", "level": 11 },
-        { "name": "Framer Motion", "level": 40 },
-        { "name": "Animation Web", "level": 35 }
-      ]
-    }
-  ]
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools_platforms": "Werkzeuge & Plattformen",
+    "design": "Design"
+  }
 }
