@@ -56,11 +56,14 @@ export function ProjectCard({
     ]
   );
   return (
-    <div ref={ref} className=" h-fit  md:h-[200vh]  relative isolate">
+    <div
+      ref={ref}
+      className="max-sm:my-10 h-fit  sm:h-[200vh]  relative isolate"
+    >
       <motion.div
         style={{ y: translateY, scale, boxShadow: shadow }}
         transition={{ type: "spring", stiffness: 80, damping: 20 }}
-        className="group sticky  top-1/2 -translate-y-1/2  flex flex-col overflow-hidden rounded-xl  hover:shadow-2xl"
+        className="group sticky  not-sm:transform-none!   top-1/2 -translate-y-1/2  flex flex-col overflow-hidden rounded-xl  hover:shadow-2xl"
       >
         <div className="relative min-h-72 h-full w-full overflow-hidden bg-muted sm:h-52  md:h-128">
           <Image
@@ -73,14 +76,14 @@ export function ProjectCard({
           {/* Overlay Gradient - darker and more prominent */}
           <motion.div
             className="
-         bg-linear-to-tr from-primary/15 to-primary/15
           absolute inset-0 
-          from-5%
-          pointer-events-none
-          via-black/80
-          via-20%
+          bg-black/40
+          bg-radial
+          from-black/55
+          to-white/10
+       
           
-          to-98%
+          
         "
           />
 

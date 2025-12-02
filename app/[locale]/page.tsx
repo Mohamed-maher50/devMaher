@@ -5,13 +5,13 @@ import { ThemeSelector } from "@/components/ThemeSelector";
 import { UserProfile } from "@/types";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
-import { Cpu, FolderKanban, HomeIcon, Mail } from "lucide-react";
+import { Cpu, FolderKanban, HomeIcon } from "lucide-react";
 import TabletMockup from "@/components/TabletMockup";
 import Projects from "@/components/Projects";
 import { supportedLanguages } from "@/constants/locales";
 import ScrollElementProvider from "@/components/ScrollElementProvider";
 import { ContactSection } from "@/components/ContactSection";
-import { ProjectCard } from "@/components/project-card";
+import { SuspenseProjectSkeletons } from "@/components/ProjectSkeleton";
 
 const navbarLinks = [
   {
@@ -42,7 +42,7 @@ export default async function Home({
   const t = await getTranslations();
   const profile: UserProfile = t.raw("profile");
   return (
-    <div className="flex flex-col gap-y-10">
+    <div className="flex flex-col gap-y-10 ">
       <Navbar activeSection="overflow" navLinks={navbarLinks} />
       <div className="px-4 lg:px-16 xl:px-28  mx-auto">
         <ScrollElementProvider name="">
@@ -53,11 +53,13 @@ export default async function Home({
         <SkillsSection />
         <TabletMockup />
 
-        <Suspense fallback={<div>Loading Projects...</div>}>
+        <Suspense fallback={<SuspenseProjectSkeletons />}>
           <Projects locale={locale} />
         </Suspense>
         <ThemeSelector />
-        <ContactSection />
+        <ScrollElementProvider name="contact">
+          <ContactSection />
+        </ScrollElementProvider>
       </div>
     </div>
   );

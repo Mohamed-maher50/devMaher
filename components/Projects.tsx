@@ -6,6 +6,7 @@ import HeadingLamp from "./LampHeading";
 import { Element } from "react-scroll";
 import ScrollElementProvider from "./ScrollElementProvider";
 import { ProjectCard } from "./project-card";
+import ProjectSkeleton, { SuspenseProjectSkeletons } from "./ProjectSkeleton";
 const query = `
 
 *[_type=="projects"]{

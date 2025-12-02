@@ -13,13 +13,14 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import Hero from "@/assets/images/hero.webp";
 import NetworkBackground from "./NetworkAnimation";
+import Link from "next/link";
+import { Button } from "./ui/button";
 interface HeroSectionProps {
   profile: UserProfile;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
   const t = await getTranslations();
-  const header = t("skills:title");
 
   return (
     <motion.div
@@ -81,20 +82,38 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                 transition={{ delay: 0.4 }}
                 className="flex gap-3"
               >
-                <button
+                <Button
+                  asChild
+                  size={"lg"}
+                  variant={"default"}
                   aria-label="download_button"
                   className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-sm"
                 >
-                  <Download className="w-4 h-4" />
+                  <Link
+                    href={"/mohamedmaher_cv.pdf"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="download cv link"
+                    download
+                  >
+                    <Download className="w-4 h-4" />
+                  </Link>
                   {/* <span>{t.downloadCv}</span> */}
-                </button>
-                <button
+                </Button>
+                <Button
+                  asChild
+                  size={"lg"}
                   aria-label="send email button"
                   className="bg-secondary text-secondary-foreground px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-secondary/80 transition-colors flex items-center gap-2 border border-border"
                 >
-                  <Mail className="w-4 h-4" />
-                  {/* <span>{t.contactBtn}</span> */}
-                </button>
+                  <Link
+                    aria-label="send email link"
+                    href={`mailto:mohamedmaher.mm330@gmail.com`}
+                    rel="noopener noreferrer"
+                  >
+                    <Mail className="w-4 h-4" />
+                  </Link>
+                </Button>
               </motion.div>
             </div>
 
@@ -120,7 +139,7 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
               </div>
               <div className="h-4 w-px bg-border hidden sm:block"></div>
               <div className="flex items-center gap-4">
-                <a
+                <Link
                   href={profile.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -128,8 +147,8 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                   aria-label=" github profile link"
                 >
                   <Github className="w-5 h-5" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href={profile.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -137,8 +156,8 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                   className="text-muted-foreground hover:text-foreground transition-colors p-1.5 hover:bg-secondary rounded-full"
                 >
                   <Linkedin className="w-5 h-5" />
-                </a>
-                <a
+                </Link>
+                {/* <a
                   href={profile.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -146,7 +165,7 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                   className="text-muted-foreground hover:text-foreground transition-colors p-1.5 hover:bg-secondary rounded-full"
                 >
                   <Twitter className="w-5 h-5" />
-                </a>
+                </a> */}
               </div>
             </motion.div>
           </div>

@@ -116,7 +116,7 @@ export function ThemeSelector() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -20 }}
               transition={{ type: "spring", damping: 20, stiffness: 300 }}
-              className="fixed z-50 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-full max-w-2xl bg-card border border-border rounded-2xl shadow-2xl "
+              className="fixed z-50 left-1/2 top-1/2  max-sm:max-w-10/12 sm:w-2/3 -translate-y-1/2 -translate-x-1/2 w-full max-w-2xl bg-card border border-border rounded-2xl shadow-2xl "
             >
               <div className="p-6">
                 {/* Header */}
@@ -138,10 +138,10 @@ export function ThemeSelector() {
                   <p className="text-sm font-semibold text-muted-foreground mb-4">
                     Preset Themes
                   </p>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2  text-center justify-center max-sm:place-items-center w-full items-center md:grid-cols-4 gap-6">
                     <AnimatePresence mode="popLayout">
                       {defaultThemes.map((theme) => (
-                        <div key={theme.id} className={cn(theme.id)}>
+                        <div key={theme.id} className={cn(theme.id, "")}>
                           <motion.div
                             key={theme.id}
                             layout
@@ -212,7 +212,7 @@ function ThemeCard({
   return (
     <motion.div
       onClick={onSelect}
-      className={`relative cursor-pointer group p-4 rounded-lg border-2 transition-all ${
+      className={`relative cursor-pointer max-sm:size-32 grid gap-1.5 group p-4 rounded-lg border-2 transition-all ${
         isSelected
           ? "border-primary bg-primary/10"
           : "border-border hover:border-primary/50"
@@ -239,7 +239,9 @@ function ThemeCard({
       {/* Color swatches */}
 
       {/* Theme name */}
-      <p className="text-sm font-semibold text-foreground">{theme.name}</p>
+      <p className="text-sm font-semibold text-foreground text-nowrap capitalize">
+        {theme.name}
+      </p>
 
       {/* Selection indicator */}
       {isSelected && (

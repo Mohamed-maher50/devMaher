@@ -41,7 +41,7 @@ const HeadingLamp = async () => {
           }}
         />
       </motion.div>
-      <div className="mt-10 rtl:font-cairo capitalize font-sora mx-auto w-fit text-secondary-foreground/90  text-4xl font-bold">
+      <div className="mt-10 mx-sm:w-fit text-center rtl:font-cairo capitalize font-sora mx-auto w-fit text-secondary-foreground/90  text-4xl font-bold">
         {t("project:title")}
       </div>
     </div>

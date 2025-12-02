@@ -7,13 +7,11 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { Link } from "@/lib/i18n/navigation";
 import { cn } from "../lib/utils";
 import { DarkModeToggle } from "./DarkModeTaggle";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { Link as ScrollLink } from "react-scroll";
-import { useParams } from "next/navigation";
 export interface NavLink {
   id: string;
   label: string;
@@ -45,11 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, navLinks }) => {
       setIsHeaderHidden(false);
     }
   });
-  // const click = (sectionId: string) => {
-  //   setActiveLink(sectionId);
-  //   const ele = document.getElementById(sectionId);
-  //   if (!ele) return window.scrollTo({ top: 0, behavior: "smooth" });
-  //   ele?.scrollIntoView({ behavior: "smooth" });
+
   // };
   return (
     <motion.header
@@ -68,10 +62,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, navLinks }) => {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-            <span className="text-primary-foreground font-bold text-lg">C</span>
+            <span className="text-primary-foreground font-bold text-lg">M</span>
           </div>
           <span className="font-semibold text-lg tracking-tight hidden sm:block group-hover:text-primary transition-colors">
-            MotionForge
+            Maher
           </span>
         </div>
 
@@ -82,7 +76,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, navLinks }) => {
                 <Button
                   key={link.id}
                   variant={activeLink === link.id ? "secondary" : "ghost"}
-                  // onClick={() => scrollToSection(link.id)}
                   asChild
                   className={cn(
                     "transition-all rtl:font-cairo cursor-pointer",
@@ -114,12 +107,14 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, navLinks }) => {
             asChild
             className="cursor-pointer rtl:font-cairo font-sora xs:inline-flex shadow-sm"
           >
-            <ScrollLink to="contact">{t("sections.contact")}</ScrollLink>
+            <ScrollLink step={2} smooth to="contact">
+              {t("sections.contact")}
+            </ScrollLink>
           </Button>
         </div>
       </div>
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary origin-left z-50"
+        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary origin-left z-50"
         style={{ scaleX }}
       />
     </motion.header>
