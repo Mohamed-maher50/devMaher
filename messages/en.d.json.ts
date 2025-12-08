@@ -2,6 +2,10 @@
 // See: https://next-intl.dev/docs/workflows/typescript#messages-arguments
 
 declare const messages: {
+  "seo": {
+    "title": "Mohamed Maher | Frontend Developer",
+    "desc": "Frontend developer portfolio showcasing scalable, high-performance web applications built with React, Next.js, TypeScript, and modern UI systems."
+  },
   "profile": {
     "bio": "Front-End Developer specializing in modern web technologies, with a strong focus on React, Next.js, and building scalable applications.",
     "email": "mohamedmaher.mm330@gmail.com",

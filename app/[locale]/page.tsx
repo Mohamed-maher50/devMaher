@@ -12,7 +12,7 @@ import { supportedLanguages } from "@/constants/locales";
 import ScrollElementProvider from "@/components/ScrollElementProvider";
 import { ContactSection } from "@/components/ContactSection";
 import { SuspenseProjectSkeletons } from "@/components/ProjectSkeleton";
-
+import { Metadata } from "next";
 const navbarLinks = [
   {
     Icon: <HomeIcon />,
@@ -33,6 +33,32 @@ const navbarLinks = [
     labelKey: "sections.projects",
   },
 ];
+type MetadataProps = {
+  locale: supportedLanguages;
+};
+export async function generateMetadata({}: {
+  params: Promise<MetadataProps>;
+}): Promise<Metadata> {
+  const t = await getTranslations("seo");
+  return {
+    title: t("title"),
+    description: t("desc"),
+
+    openGraph: {
+      title: t("title"),
+      description: t("desc"),
+      url: process.env.NEXT_PUBLIC_SITE_URL,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/maherAvatar.png`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      type: "website",
+    },
+  };
+}
 export default async function Home({
   params,
 }: {

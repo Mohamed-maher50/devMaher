@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Mohamed Maher | Frontend-Entwickler",
+    "desc": "Frontend-Entwickler-Portfolio mit skalierbaren, leistungsstarken Webanwendungen, entwickelt mit React, Next.js, TypeScript und modernen UI-Systemen."
+  },
   "profile": {
     "bio": "Front-End-Entwickler, spezialisiert auf moderne Webtechnologien, mit starkem Fokus auf React, Next.js und den Aufbau skalierbarer Anwendungen.",
     "email": "mohamedmaher.mm330@gmail.com",
