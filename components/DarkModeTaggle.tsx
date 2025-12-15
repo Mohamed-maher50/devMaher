@@ -1,29 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "./ui/button";
 import * as motion from "motion/react-client";
-function getInitialTheme() {
-  if (typeof window === "undefined") return false; // Handle SSR/Next.js safely
-  const savedTheme = localStorage.getItem("mode");
-  const systemPrefersDark = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
-  if (savedTheme === "dark") return true;
-  if (savedTheme === "light") return false;
-  return systemPrefersDark;
-}
-export const DarkModeToggle: React.FC = () => {
-  const [isDark, setIsDark] = useState(getInitialTheme());
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("mode", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("mode", "light");
-    }
-  }, [isDark]);
+import { Skeleton } from "./ui/skeleton";
+import { useTheme } from "./ThemeProvider";
+
+const DarkModeToggle: React.FC = () => {
+  const { isDark, setIsDark } = useTheme();
 
   const toggleTheme = () => {
     setIsDark(!isDark);
@@ -56,3 +40,11 @@ export const DarkModeToggle: React.FC = () => {
     </Button>
   );
 };
+export default DarkModeToggle;
+export function DarkModeToggleSkeleton() {
+  return (
+    <div className="relative w-10 h-10">
+      <Skeleton className="w-10 h-10 rounded-full" />
+    </div>
+  );
+}

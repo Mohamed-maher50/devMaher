@@ -22,7 +22,11 @@ _id
 
 `;
 const Projects = async ({ locale }: { locale: supportedLanguages }) => {
-  const data: Project[] = await client.fetch(query, { locale });
+  const data: Project[] = await client.fetch(
+    query,
+    { locale },
+    { cache: "force-cache" }
+  );
   return (
     <ScrollElementProvider name="projects">
       <section className="flex flex-col my-30">

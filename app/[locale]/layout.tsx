@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/lib/i18n/routing";
 import ScrollProgress from "@/components/ScrollProgress";
 import { Toaster } from "@/components/ui/sonner";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const CairoFont = Cairo({
   variable: "--font-cairo-sans",
@@ -55,10 +56,12 @@ export default async function RootLayout({ children, params }: Props) {
         className={`${CairoFont.variable} ${InterFont.variable} ${TajawalFont.variable} antialiased  ${SoraFont.variable}`}
       >
         <NextIntlClientProvider>
-          {/* <LanguageSwitcher /> */}
-          {children}
-          <ScrollProgress />
-          <Toaster richColors />
+          <ThemeProvider>
+            {/* <LanguageSwitcher /> */}
+            {children}
+            <ScrollProgress />
+            <Toaster richColors />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

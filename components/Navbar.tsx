@@ -1,18 +1,36 @@
 "use client";
-import React, { JSX, useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+
+const DarkModeToggle = dynamic(async () => import("./DarkModeTaggle"), {
+  ssr: false,
+  loading: DarkModeToggleSkeleton,
+});
+const LanguageSwitcher = dynamic(async () => import("./LanguageSwitcher"), {
+  ssr: false,
+  loading: LanguageSwitcherSkeleton,
+});
+const MobileLanguageSwitcher = dynamic(
+  async () => import("./MobileLanguageSwitcher"),
+  {
+    ssr: false,
+    loading: MobileLanguageSwitcherSkeleton,
+  }
+);
+
+import React, { JSX, useState } from "react";
 import {
   motion,
   useScroll,
   useSpring,
   useMotionValueEvent,
 } from "framer-motion";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { cn } from "../lib/utils";
-import { DarkModeToggle } from "./DarkModeTaggle";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { Link as ScrollLink } from "react-scroll";
-import { MobileLanguageSwitcher } from "./MobileLanguageSwitcher";
+import { MobileLanguageSwitcherSkeleton } from "./MobileLanguageSwitcher";
+import { LanguageSwitcherSkeleton } from "./LanguageSwitcher";
+import { DarkModeToggleSkeleton } from "./DarkModeTaggle";
 export interface NavLink {
   id: string;
   label: string;
@@ -45,7 +63,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, navLinks }) => {
     }
   });
 
-  // };
   return (
     <motion.header
       dir="ltr"

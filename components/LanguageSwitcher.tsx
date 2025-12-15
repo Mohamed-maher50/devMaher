@@ -4,16 +4,13 @@ import { languages, supportedLanguages } from "@/constants/locales";
 import { useRouter } from "@/lib/i18n/navigation";
 import { motion } from "motion/react";
 import { useLocale } from "next-intl";
+import { Skeleton } from "./ui/skeleton";
 
-export function LanguageSwitcher() {
+function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const onChange = (locale: supportedLanguages) => {
     Cookies.set("NEXT_LOCALE", locale);
-    // Source - https://stackoverflow.com/a/66166897
-    // Posted by Muljayan
-    // Retrieved 2025-11-28, License - CC BY-SA 4.0
-
     router.push("/", { locale: locale, scroll: false });
   };
 
@@ -42,5 +39,17 @@ export function LanguageSwitcher() {
         </motion.button>
       ))}
     </motion.div>
+  );
+}
+export default LanguageSwitcher;
+
+export function LanguageSwitcherSkeleton() {
+  return (
+    <div className="flex gap-2 bg-background/80 backdrop-blur-md border border-border rounded-full p-1">
+      {/* إنشاء 3 skeleton buttons */}
+      {[1, 2, 3, 4].map((i) => (
+        <Skeleton key={i} className="w-12 h-6 rounded-full" />
+      ))}
+    </div>
   );
 }

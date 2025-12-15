@@ -11,23 +11,20 @@ import {
 import { Button } from "@/components/ui/button";
 import { useRouter } from "@/lib/i18n/navigation";
 import { useLocale } from "next-intl";
-import {
-  EXTENDED_LANGUAGES,
-  languages,
-  supportedLanguages,
-} from "@/constants/locales";
+import { EXTENDED_LANGUAGES, supportedLanguages } from "@/constants/locales";
 import Cookies from "js-cookie";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "./ui/skeleton";
 
 interface LanguageSwitcherProps {
   currentLanguage?: string;
   onLanguageChange?: (languageCode: string) => void;
 }
 
-export function MobileLanguageSwitcher({
+const MobileLanguageSwitcher = ({
   currentLanguage = "en",
   onLanguageChange,
-}: LanguageSwitcherProps) {
+}: LanguageSwitcherProps) => {
   const locale = useLocale();
   const [open, setOpen] = useState(false);
   const router = useRouter();
@@ -83,4 +80,9 @@ export function MobileLanguageSwitcher({
       </DropdownMenuContent>
     </DropdownMenu>
   );
+};
+export default MobileLanguageSwitcher;
+
+export function MobileLanguageSwitcherSkeleton() {
+  return <Skeleton className="w-10 h-10 rounded-full" />;
 }

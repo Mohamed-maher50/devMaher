@@ -1,13 +1,6 @@
 import React from "react";
 import * as motion from "motion/react-client";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-  MapPin,
-  Download,
-} from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Download } from "lucide-react";
 import { UserProfile } from "@/types";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
@@ -15,6 +8,7 @@ import Hero from "@/assets/images/hero.webp";
 import NetworkBackground from "./NetworkAnimation";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { Whatsapp } from "./icons/Index";
 interface HeroSectionProps {
   profile: UserProfile;
 }
@@ -90,7 +84,9 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                   className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-sm"
                 >
                   <Link
-                    href={"/mohamedmaher_cv.pdf"}
+                    href={
+                      "/mohamed _maher_Abdelaziz_Front_end_developer _resume.pdf"
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="download cv link"
@@ -98,7 +94,6 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                   >
                     <Download className="w-4 h-4" />
                   </Link>
-                  {/* <span>{t.downloadCv}</span> */}
                 </Button>
                 <Button
                   asChild
@@ -112,6 +107,22 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                     rel="noopener noreferrer"
                   >
                     <Mail className="w-4 h-4" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size={"lg"}
+                  aria-label="send email button"
+                  className="bg-secondary fill-secondary-foreground px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-secondary/80 transition-colors flex items-center gap-2 border border-border"
+                >
+                  <Link
+                    target="_blank"
+                    aria-label={t("contact:whatsapp")}
+                    href={`https://wa.link/k3cm9l`}
+                    rel="noopener noreferrer"
+                    className="fill-inherit"
+                  >
+                    <Whatsapp className="fill-inherit text-inherit" />
                   </Link>
                 </Button>
               </motion.div>

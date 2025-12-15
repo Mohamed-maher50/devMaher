@@ -66,15 +66,14 @@ export default async function Home({
 }) {
   const { locale } = await params;
   const t = await getTranslations();
+
   const profile: UserProfile = t.raw("profile");
   return (
     <div className="flex flex-col gap-y-10 ">
       <Navbar activeSection="overflow" navLinks={navbarLinks} />
       <div className="px-4 lg:px-16 xl:px-28  mx-auto">
         <ScrollElementProvider name="">
-          <Suspense fallback={<div>Loading Hero...</div>}>
-            <HeroSection profile={profile} />
-          </Suspense>
+          <HeroSection profile={profile} />
         </ScrollElementProvider>
         <SkillsSection />
         <TabletMockup />

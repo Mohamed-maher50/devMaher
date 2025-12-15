@@ -2,6 +2,7 @@
 // See: https://next-intl.dev/docs/workflows/typescript#messages-arguments
 
 declare const messages: {
+  "contact:whatsapp": "Contact Mohamed Maher via WhaXtsApp",
   "seo": {
     "title": "Mohamed Maher | Frontend Developer",
     "desc": "Frontend developer portfolio showcasing scalable, high-performance web applications built with React, Next.js, TypeScript, and modern UI systems."

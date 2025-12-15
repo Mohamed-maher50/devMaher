@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Palette, X, Plus } from "lucide-react";
 import { ColorPicker } from "./color-picker";
 import { cn } from "@/lib/utils";
+import { useTheme } from "./ThemeProvider";
 
 export interface ThemePalette {
   id: string;
@@ -29,43 +30,15 @@ const defaultThemes: ThemePalette[] = [
     name: "amber minimal",
   },
 ];
-const getInitialTheme = () => {
-  if (typeof window === "undefined") return "theme-light"; // Handle SSR/Next.js safely
-  const savedTheme = localStorage.getItem("theme");
-  return savedTheme || "theme-light";
-};
+
 export function ThemeSelector() {
-  const [themes, setThemes] = useState<ThemePalette[]>(defaultThemes);
-  const [selectedTheme, setSelectedTheme] = useState<string>(getInitialTheme());
+  const { setThemes, themes, setSelectedTheme, selectedTheme } = useTheme();
+
   const [isOpen, setIsOpen] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
   const [customTheme, setCustomTheme] = useState<Partial<ThemePalette> | null>(
     null
   );
-  const applyTheme = (themeId: string) => {
-    const theme = themes.find((t) => t.id === themeId);
-    if (theme) {
-      // Remove any existing theme classes and add the new one (if provided)
-      const root = document.body;
-      const themeCandidates = [...themes.map((t) => t.id).filter(Boolean)];
-
-      // Remove existing theme classes
-      Array.from(root.classList).forEach((cls) => {
-        if (themeCandidates.includes(cls)) root.classList.remove(cls);
-      });
-
-      // If themeId is not empty, add it; otherwise we only remove theme classes
-      if (themeId && themeId.length > 0) {
-        root.classList.add(themeId);
-      }
-    }
-  };
-  useEffect(() => {
-    if (defaultThemes.some((t) => t.id === selectedTheme))
-      localStorage.setItem("theme", selectedTheme);
-    applyTheme(selectedTheme);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedTheme]);
 
   const handleSaveCustomTheme = (newTheme: ThemePalette) => {
     setThemes([...themes, newTheme]);
