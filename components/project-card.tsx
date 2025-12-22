@@ -5,11 +5,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
-import { fa } from "zod/v4/locales";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
-
-interface ProjectCardProps {
+export interface ProjectCardProps {
   title: string;
   description: string;
   image: string;

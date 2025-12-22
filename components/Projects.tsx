@@ -3,10 +3,9 @@ import { client } from "@/lib/sanity";
 import { Project } from "@/types";
 import { urlFor } from "@/lib/utils";
 import HeadingLamp from "./LampHeading";
-import { Element } from "react-scroll";
 import ScrollElementProvider from "./ScrollElementProvider";
-import { ProjectCard } from "./project-card";
-import ProjectSkeleton, { SuspenseProjectSkeletons } from "./ProjectSkeleton";
+import { ProjectCard as ProductCardv1 } from "./ProductCard";
+import { ProjectCard } from "././project-card";
 const query = `
 
 *[_type=="projects"]{
@@ -31,17 +30,19 @@ const Projects = async ({ locale }: { locale: supportedLanguages }) => {
     <ScrollElementProvider name="projects">
       <section className="flex flex-col my-30">
         <HeadingLamp />
-        <div className="pt-44">
+        <div className="pt-44 grid grid-cols-1  gap-5 sm:grid-cols-2 md:grid-cols-1">
           {data.map((p) => {
             return (
-              <ProjectCard
-                description={p.description}
-                image={urlFor(p.image).width(1216).height(512).url()}
-                imageAlt={p.title}
-                title={p.title}
-                link={p.link}
-                key={p._id}
-              />
+              <>
+                <ProductCardv1
+                  description={p.description}
+                  image={urlFor(p.image).width(1216).height(512).url()}
+                  imageAlt={p.title}
+                  title={p.title}
+                  link={p.link}
+                  key={p._id}
+                />
+              </>
             );
           })}
         </div>
