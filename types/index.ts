@@ -43,4 +43,5 @@ export type Project = {
   _id: string;
   image: SanityImageSource;
   link: string;
+  techStack: string[];
 };

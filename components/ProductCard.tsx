@@ -15,7 +15,7 @@ export function ProjectCard({
   image,
   link,
   imageAlt = "Project preview",
-
+  techStack,
   //   category = "Development",
   //   tags = [],
 }: ProjectCardProps) {
@@ -51,7 +51,7 @@ export function ProjectCard({
       <motion.div
         style={{ y: translateY, scale, boxShadow: shadow }}
         transition={{ type: "spring", stiffness: 80, damping: 20 }}
-        className="group relative max-h-[550px] max-sm:transform-none! snap-center overflow-hidden rounded-2xl max-md:transition-all max-md:duration-700 border border-border/50 bg-card backdrop-blur-sm hover:border-accent hover:shadow-2xl hover:shadow-accent/10 max-md:hover:-translate-y-2"
+        className="group relative sm:max-h-[550px] max-sm:transform-none! snap-center overflow-hidden rounded-2xl max-md:transition-all max-md:duration-700 border border-border/50 bg-card backdrop-blur-sm hover:border-accent hover:shadow-2xl hover:shadow-accent/10 max-md:hover:-translate-y-2"
       >
         {/* Overlay Gradient - darker and more prominent */}
         <motion.div
@@ -79,10 +79,17 @@ export function ProjectCard({
           />
 
           {/* Category badge */}
-          <div className="absolute top-4 left-4 z-20">
-            <span className="inline-flex items-center rounded-full border border-border/50 bg-background/80 backdrop-blur-md px-3 py-1 text-xs font-medium text-foreground transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground">
-              {"primary"}
-            </span>
+          <div className="absolute hidden md:flex top-4 left-4 z-20">
+            {/* Tags */}
+            {techStack.length > 0 && (
+              <div className=" flex flex-wrap gap-2">
+                {techStack.map((tag, i) => (
+                  <Badge key={i} variant={"default"}>
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -107,15 +114,15 @@ export function ProjectCard({
             animate={{ opacity: 1 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: false, amount: 0.1 }}
-            className="text-sm leading-relaxed sm:text-base md:text-lg  rtl:font-Tajawal md:text-white/90 text-muted-foreground line-clamp-2"
+            className="text-sm leading-relaxed sm:text-base md:text-lg  rtl:font-Tajawal md:text-white/90 text-muted-foreground line-clamp-4"
           >
             {description}
           </motion.p>
 
           {/* Tags */}
-          {["html", "css", "typescript"].length > 0 && (
-            <div className="flex hidden flex-wrap gap-2">
-              {["html", "css", "typescript"].map((tag, i) => (
+          {techStack.length > 0 && (
+            <div className=" flex md:hidden flex-wrap gap-2">
+              {techStack.map((tag, i) => (
                 <Badge key={i} variant={"secondary"}>
                   {tag}
                 </Badge>
@@ -124,11 +131,11 @@ export function ProjectCard({
           )}
 
           {/* View Demo Button */}
-          <div className="pt-2">
+          <div className="pt-2 ">
             <Button
               asChild
               size={"lg"}
-              variant={"default"}
+              variant={"outline"}
               className="rounded-full  group/button"
             >
               <Link href={link} target="_blank" rel="noopener noreferrer">
@@ -139,7 +146,7 @@ export function ProjectCard({
           </div>
 
           {/* External link icon */}
-          <div className="absolute md:hidden top-6 right-6 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2">
+          <div className="absolute hidden md:hidden top-6 right-6 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2">
             <ExternalLink className="h-5 w-5 text-muted-foreground" />
           </div>
         </div>

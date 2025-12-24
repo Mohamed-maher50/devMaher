@@ -29,5 +29,12 @@ export const projectsType = defineType({
       title: 'Project Link',
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'techStack',
+      title: 'Tech Stack',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required().min(1),
+    }),
   ],
 })

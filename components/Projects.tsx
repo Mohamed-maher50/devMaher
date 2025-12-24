@@ -5,7 +5,7 @@ import { urlFor } from "@/lib/utils";
 import HeadingLamp from "./LampHeading";
 import ScrollElementProvider from "./ScrollElementProvider";
 import { ProjectCard as ProductCardv1 } from "./ProductCard";
-import { ProjectCard } from "././project-card";
+
 const query = `
 
 *[_type=="projects"]{
@@ -16,7 +16,8 @@ _createdAt,
   title[_key == "en"][0].value),
 link,
 image,
-_id
+_id,
+techStack
 }
 
 `;
@@ -33,16 +34,15 @@ const Projects = async ({ locale }: { locale: supportedLanguages }) => {
         <div className="pt-44 grid grid-cols-1  gap-5 sm:grid-cols-2 md:grid-cols-1">
           {data.map((p) => {
             return (
-              <>
-                <ProductCardv1
-                  description={p.description}
-                  image={urlFor(p.image).width(1216).height(512).url()}
-                  imageAlt={p.title}
-                  title={p.title}
-                  link={p.link}
-                  key={p._id}
-                />
-              </>
+              <ProductCardv1
+                description={p.description}
+                image={urlFor(p.image).width(1216).height(512).url()}
+                imageAlt={p.title}
+                title={p.title}
+                link={p.link}
+                key={p._id}
+                techStack={p.techStack}
+              />
             );
           })}
         </div>

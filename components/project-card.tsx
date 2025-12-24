@@ -13,6 +13,7 @@ export interface ProjectCardProps {
   image: string;
   imageAlt: string;
   link: string;
+  techStack: string[];
 }
 
 export function ProjectCard({
