@@ -8,7 +8,7 @@ declare const messages: {
     "desc": "Frontend developer portfolio showcasing scalable, high-performance web applications built with React, Next.js, TypeScript, and modern UI systems."
   },
   "profile": {
-    "bio": "Front-End Developer specializing in modern web technologies, with a strong focus on React, Next.js, and building scalable applications.",
+    "bio": "I’m Mohamed Maher, a Front-End Developer with Next.js. I love exploring new things in web development and building websites with clean, organized code. I focus on design, performance, and user experience. I also enjoy UX, responsive design, and learning new technologies.",
     "email": "mohamedmaher.mm330@gmail.com",
     "location": "Egypt, Elshrqia",
     "name": "Mohamed Maher",

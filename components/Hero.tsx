@@ -23,7 +23,7 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
       transition={{ duration: 0.6 }}
       className="bg-card rounded-xl border border-border shadow-sm overflow-hidden mb-8"
     >
-      <div className="relative h-48 sm:h-52 overflow-hidden border-b border-border/50">
+      <div className="relative h-40 sm:h-40 overflow-hidden border-b border-border/50">
         <NetworkBackground />
       </div>
 
