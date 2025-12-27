@@ -13,6 +13,7 @@ import ScrollElementProvider from "@/components/ScrollElementProvider";
 import { ContactSection } from "@/components/ContactSection";
 import { SuspenseProjectSkeletons } from "@/components/ProjectSkeleton";
 import { Metadata } from "next";
+import { MobileShell } from "@/components/MockMobile";
 const navbarLinks = [
   {
     Icon: <HomeIcon />,
@@ -77,7 +78,7 @@ export default async function Home({
         </ScrollElementProvider>
         <SkillsSection />
         <TabletMockup />
-
+        {/* <MobileShell /> */}
         <Suspense fallback={<SuspenseProjectSkeletons />}>
           <Projects locale={locale} />
         </Suspense>
