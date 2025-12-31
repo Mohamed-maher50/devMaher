@@ -14,6 +14,7 @@ import { routing } from "@/lib/i18n/routing";
 import ScrollProgress from "@/components/ScrollProgress";
 import { Toaster } from "@/components/ui/sonner";
 import ThemeProvider from "@/components/ThemeProvider";
+import Head from "next/head";
 
 const CairoFont = Cairo({
   variable: "--font-cairo-sans",
@@ -55,6 +56,9 @@ export default async function RootLayout({ children, params }: Props) {
       <body
         className={`${CairoFont.variable} ${InterFont.variable} ${TajawalFont.variable} antialiased  ${SoraFont.variable}`}
       >
+        <Head>
+          <meta name="apple-mobile-web-app-title" content="DevMaher" />
+        </Head>
         <NextIntlClientProvider>
           <ThemeProvider>
             {/* <LanguageSwitcher /> */}

@@ -49,5 +49,7 @@
     "backend": "Backend",
     "tools_platforms": "Werkzeuge & Plattformen",
     "design": "Design"
-  }
+  },
+  "viewMore": "Mehr Anzeigen",
+  "noMore": "Folge mir für mehr"
 }

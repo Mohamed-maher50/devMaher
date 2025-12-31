@@ -14,6 +14,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { SuspenseProjectSkeletons } from "@/components/ProjectSkeleton";
 import { Metadata } from "next";
 import { MobileShell } from "@/components/MockMobile";
+import Head from "next/head";
 const navbarLinks = [
   {
     Icon: <HomeIcon />,
@@ -44,6 +45,30 @@ export async function generateMetadata({}: {
   return {
     title: t("title"),
     description: t("desc"),
+    manifest: "/manifest.json",
+    icons: {
+      icon: [
+        {
+          rel: "icon",
+          url: "/favicon-96x96.png",
+          sizes: "96x96",
+          type: "image/png",
+        },
+        {
+          rel: "icon",
+          url: "/favicon.svg",
+          type: "image/svg+xml",
+        },
+      ],
+      apple: [
+        {
+          url: "/apple-touch-icon.png",
+          sizes: "180x180",
+          rel: "apple-touch-icon",
+        },
+      ],
+      shortcut: ["/favicon.ico"],
+    },
 
     openGraph: {
       title: t("title"),
@@ -71,6 +96,9 @@ export default async function Home({
   const profile: UserProfile = t.raw("profile");
   return (
     <div className="flex flex-col gap-y-10 ">
+      <Head>
+        <meta name="apple-mobile-web-app-title" content="DevMaher" />
+      </Head>
       <Navbar activeSection="overflow" navLinks={navbarLinks} />
       <div className="px-4 lg:px-16 xl:px-28  mx-auto">
         <ScrollElementProvider name="">

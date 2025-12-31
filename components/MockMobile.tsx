@@ -56,7 +56,9 @@ export function MobileShell() {
         <div className="rounded-[2rem] overflow-hidden w-full h-full bg-background flex flex-col">
           {/* Status Bar */}
           <div className="h-6 w-full flex items-center justify-between px-6 pt-2">
-            <span className="text-[10px] font-bold">9:41</span>
+            <span className="text-[10px] font-bold">
+              {new Date().toLocaleTimeString()}
+            </span>
             <div className="flex gap-1">
               <div className="w-3 h-3 rounded-full bg-foreground/20"></div>
               <div className="w-3 h-3 rounded-full bg-foreground/20"></div>
@@ -128,7 +130,7 @@ export function MobileShell() {
           </header>
 
           {/* Web Content Area */}
-          <ScrollArea className="h-max gap-5 overflow-y-hidden p-4 space-y-10 bg-muted/10">
+          <ScrollArea className="h-max  gap-5 overflow-y-hidden p-4 space-y-10 bg-muted/10">
             <div className="space-y-7">
               <div className="h-32 rounded-xl bg-primary/10 flex items-center justify-center border-2 border-dashed border-primary/20">
                 <Globe className="w-8 h-8 text-primary/40 animate-pulse" />

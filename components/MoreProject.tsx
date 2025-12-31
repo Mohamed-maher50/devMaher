@@ -4,11 +4,12 @@ import React, { useMemo } from "react";
 import InfiniteScroll from "./InfiniteScroll";
 import { Loader2 } from "lucide-react";
 import { client } from "@/lib/sanity";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { urlFor } from "@/lib/utils";
 import { ProjectCard as ProductCardv1 } from "./ProductCard";
 import { Button } from "./ui/button";
 import { PRODUCT_PER_PAGE } from "@/constants/products";
+import { Label } from "./ui/label";
 const query = `
 {
   "items": *[_type == "projects"]
@@ -30,6 +31,7 @@ const query = `
 }
 `;
 const MoreProject = () => {
+  const t = useTranslations();
   const [page, setPage] = React.useState(1);
   const [loading, setLoading] = React.useState(false);
   const [hasMore, setHasMore] = React.useState(true);
@@ -51,7 +53,6 @@ const MoreProject = () => {
         { locale, start, end },
         { cache: "force-cache" }
       );
-      console.log(data);
       setProducts((prev) => [...prev, ...data.items]);
       setPage((prev) => prev + 1);
 
@@ -84,8 +85,14 @@ const MoreProject = () => {
         className="w-fit mx-auto cursor-pointer capitalize"
         size={"sm"}
       >
-        view More
+        {t("viewMore")}
       </Button>
+      <span
+        hidden={hasMore}
+        className=" text-muted-foreground text-center mx-auto block"
+      >
+        {t("noMore")}
+      </span>
       {/* <InfiniteScroll
           hasMore={hasMore}
           isLoading={loading}
