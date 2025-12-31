@@ -100,7 +100,7 @@ export default async function Home({
         <meta name="apple-mobile-web-app-title" content="DevMaher" />
       </Head>
       <Navbar activeSection="overflow" navLinks={navbarLinks} />
-      <div className="px-4 lg:px-16 xl:px-28  mx-auto">
+      <div className="px-4 lg:px-16 xl:px-28 isolate mx-auto">
         <ScrollElementProvider name="">
           <HeroSection profile={profile} />
         </ScrollElementProvider>
