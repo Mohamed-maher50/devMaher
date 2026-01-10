@@ -7,11 +7,10 @@ import ScrollElementProvider from "./ScrollElementProvider";
 import { ProjectCard as ProductCardv1 } from "./ProductCard";
 import MoreProject from "./MoreProject";
 import { PRODUCT_PER_PAGE } from "@/constants/products";
-
-const query = `
+export const query = `
 {
   "items": *[_type == "projects"]
-    | order(_createdAt desc)
+    | order(viewOrder desc)
     [$start...$end]{
       _createdAt,
       "description": description[_key == $locale][0].value,
@@ -22,7 +21,8 @@ const query = `
       link,
       image,
       _id,
-      techStack
+      techStack,
+      viewOrder 
     },
 
   "total": count(*[_type == "projects"])

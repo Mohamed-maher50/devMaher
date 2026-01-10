@@ -30,6 +30,12 @@ export const projectsType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'viewOrder',
+      type: 'number',
+      title: 'to display project by order',
+      validation: (rule) => rule.required().min(0),
+    }),
+    defineField({
       name: 'techStack',
       title: 'Tech Stack',
       type: 'array',

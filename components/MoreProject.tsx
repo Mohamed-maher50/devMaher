@@ -9,27 +9,8 @@ import { urlFor } from "@/lib/utils";
 import { ProjectCard as ProductCardv1 } from "./ProductCard";
 import { Button } from "./ui/button";
 import { PRODUCT_PER_PAGE } from "@/constants/products";
-import { Label } from "./ui/label";
-const query = `
-{
-  "items": *[_type == "projects"]
-    | order(_createdAt desc)
-    [$start...$end]{
-      _createdAt,
-      "description": description[_key == $locale][0].value,
-      "title": coalesce(
-        title[_key == $locale][0].value,
-        title[_key == "en"][0].value
-      ),
-      link,
-      image,
-      _id,
-      techStack
-    },
+import { query } from "./Projects";
 
-  "total": count(*[_type == "projects"])
-}
-`;
 const MoreProject = () => {
   const t = useTranslations();
   const [page, setPage] = React.useState(1);
