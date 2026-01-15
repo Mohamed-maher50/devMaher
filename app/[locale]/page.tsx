@@ -1,10 +1,10 @@
 import { HeroSection } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
-import { SkillsSection } from "@/components/skills-section";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import { UserProfile } from "@/types";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
+import * as motion from "motion/react-client";
 import { Cpu, FolderKanban, HomeIcon } from "lucide-react";
 import TabletMockup from "@/components/TabletMockup";
 import Projects from "@/components/Projects";
@@ -13,8 +13,8 @@ import ScrollElementProvider from "@/components/ScrollElementProvider";
 import { ContactSection } from "@/components/ContactSection";
 import { SuspenseProjectSkeletons } from "@/components/ProjectSkeleton";
 import { Metadata } from "next";
-import { MobileShell } from "@/components/MockMobile";
 import Head from "next/head";
+import TechStackCardSection from "@/components/TechStackCardSection";
 const navbarLinks = [
   {
     Icon: <HomeIcon />,
@@ -38,6 +38,7 @@ const navbarLinks = [
 type MetadataProps = {
   locale: supportedLanguages;
 };
+
 export async function generateMetadata({}: {
   params: Promise<MetadataProps>;
 }): Promise<Metadata> {
@@ -85,6 +86,7 @@ export async function generateMetadata({}: {
     },
   };
 }
+
 export default async function Home({
   params,
 }: {
@@ -95,7 +97,7 @@ export default async function Home({
 
   const profile: UserProfile = t.raw("profile");
   return (
-    <div className="flex flex-col gap-y-10 ">
+    <div key={locale} className="flex flex-col gap-y-10 ">
       <Head>
         <meta name="apple-mobile-web-app-title" content="DevMaher" />
       </Head>
@@ -104,7 +106,22 @@ export default async function Home({
         <ScrollElementProvider name="">
           <HeroSection profile={profile} />
         </ScrollElementProvider>
-        <SkillsSection />
+
+        {/* Tech Stack Grid - Small Cards */}
+        <div className="my-24">
+          <motion.h2
+            className="text-4xl rtl:font-cairo font-sora md:text-5xl font-bold text-center mb-16 text-balance"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {t("skills:title")}
+          </motion.h2>
+
+          <TechStackCardSection />
+        </div>
+        {/* <SkillsSection /> */}
         <TabletMockup />
         {/* <MobileShell /> */}
         <Suspense fallback={<SuspenseProjectSkeletons />}>

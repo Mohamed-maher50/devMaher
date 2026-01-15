@@ -1,8 +1,7 @@
 "use client";
 import { Project } from "@/types";
-import React, { useMemo } from "react";
-import InfiniteScroll from "./InfiniteScroll";
-import { Loader2 } from "lucide-react";
+import React from "react";
+
 import { client } from "@/lib/sanity";
 import { useLocale, useTranslations } from "next-intl";
 import { urlFor } from "@/lib/utils";

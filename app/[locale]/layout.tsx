@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Sora,
-  Inter,
-  Cairo,
-  Tajawal,
-} from "next/font/google";
+import { Sora, Inter, Cairo, Tajawal } from "next/font/google";
 import "./globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -34,6 +27,7 @@ const TajawalFont = Tajawal({
   variable: "--font-Tajawal",
   weight: ["400", "500", "700"],
   display: "swap",
+  subsets: ["arabic"],
 });
 
 export const metadata: Metadata = {
@@ -54,7 +48,7 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html className="" lang={locale} dir={dir}>
       <body
-        className={`${CairoFont.variable} ${InterFont.variable} ${TajawalFont.variable} antialiased  ${SoraFont.variable}`}
+        className={`${CairoFont.variable} ${InterFont.variable} ${TajawalFont.variable} antialiased font-Tajawal ${SoraFont.variable}`}
       >
         <Head>
           <meta name="apple-mobile-web-app-title" content="DevMaher" />
