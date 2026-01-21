@@ -2,69 +2,69 @@
 // See: https://next-intl.dev/docs/workflows/typescript#messages-arguments
 
 declare const messages: {
-  "contact:whatsapp": "Contact Mohamed Maher via WhaXtsApp";
-  seo: {
-    title: "Mohamed Maher | Frontend Developer";
-    desc: "Frontend developer portfolio showcasing scalable, high-performance web applications built with React, Next.js, TypeScript, and modern UI systems.";
-  };
-  profile: {
-    bio: "I’m Mohamed Maher, a Front-End Developer with Next.js. I love exploring new things in web development and building websites with clean, organized code. I focus on design, performance, and user experience. I also enjoy UX, responsive design, and learning new technologies.";
-    email: "mohamedmaher.mm330@gmail.com";
-    location: "Egypt, Elshrqia";
-    name: "Mohamed Maher";
-    social: {
-      github: "github.com";
-      linkedin: "https://www.linkedin.com/in/mohamed-maher-2937a1204/";
-      twitter: "twitter.com";
-    };
-    title: "Front End Developer";
-  };
-  Header: {
-    title: "Hi 👋 My Name Is <span class='accent'> Mohamed Maher<span>";
-    about: "Front End developer ";
-  };
-  UserProfile: {
-    title: "Hello {firstName}";
-  };
-  Skills: {
-    title: "Skills";
-  };
-  "project:title": "What I’ve Built";
-  demo: "demo";
+  "contact:whatsapp": "Contact Mohamed Maher via WhaXtsApp",
+  "seo": {
+    "title": "Mohamed Maher | Frontend Developer",
+    "desc": "Frontend developer portfolio showcasing scalable, high-performance web applications built with React, Next.js, TypeScript, and modern UI systems."
+  },
+  "profile": {
+    "bio": "I’m Mohamed Maher, a Front-End Developer with Next.js. I love exploring new things in web development and building websites with clean, organized code. I focus on design, performance, and user experience. I also enjoy UX, responsive design, and learning new technologies.",
+    "email": "mohamedmaher.mm330@gmail.com",
+    "location": "Egypt, Elshrqia",
+    "name": "Mohamed Maher",
+    "social": {
+      "github": "github.com",
+      "linkedin": "https://www.linkedin.com/in/mohamed-maher-2937a1204/",
+      "twitter": "twitter.com"
+    },
+    "title": "Front End Developer"
+  },
+  "Header": {
+    "title": "Hi 👋 My Name Is <span class='accent'> Mohamed Maher<span>",
+    "about": "Front End developer "
+  },
+  "UserProfile": {
+    "title": "Hello {firstName}"
+  },
+  "Skills": {
+    "title": "Skills"
+  },
+  "project:title": "What I’ve Built",
+  "demo": "demo",
 
-  contact: {
-    name: "Name";
-    subtitle: "I’d love to hear from you! Whether you have a project idea, a question, or just want to say hi, send me a message and I’ll get back to you as soon as possible.";
-    namePlaceholder: "kareem ahmed";
-    optional: "Optional";
-    title: "Get in touch";
-    email: "Your email";
-    emailPlaceholder: "Enter your email";
-    messagePlaceholder: "Leave your message";
-    send: "Send your message";
-    sending: "Sending...";
-    message: "Your message";
-    emailError: "Please enter a valid email address";
-    messageError: "Message must be at least 10 characters long";
-    successMessage: "✓ Your message has been sent successfully! Thank you for reaching out.";
-    errorMessage: "⚠ There was an error sending your message. Please try again.";
-  };
-  nav: {
-    sections: {
-      home: "Home";
-      projects: "Projects";
-      contact: "contact";
-      skills: "skills";
-    };
-  };
-  "skills:title": "Skills & Expertise";
-  skills: {
-    frontend: "Frontend";
-    backend: "Backend";
-    tools_platforms: "tools & platforms";
-    design: "Design";
-  };
-  viewMore: "View More";
-  noMore: "Follow me for more";
+  "contact": {
+    "name": "Name",
+    "subtitle": "I’d love to hear from you! Whether you have a project idea, a question, or just want to say hi, send me a message and I’ll get back to you as soon as possible.",
+    "namePlaceholder": "kareem ahmed",
+    "optional": "Optional",
+    "title": "Get in touch",
+    "email": "Your email",
+    "emailPlaceholder": "Enter your email",
+    "messagePlaceholder": "Leave your message",
+    "send": "Send your message",
+    "sending": "Sending...",
+    "message": "Your message",
+    "emailError": "Please enter a valid email address",
+    "messageError": "Message must be at least 10 characters long",
+    "successMessage": "✓ Your message has been sent successfully! Thank you for reaching out.",
+    "errorMessage": "⚠ There was an error sending your message. Please try again."
+  },
+  "nav": {
+    "sections": {
+      "home": "Home",
+      "projects": "Projects",
+      "contact": "contact",
+      "skills": "skills"
+    }
+  },
+  "skills:title": "Skills & Expertise",
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools_platforms": "tools & platforms",
+    "design": "Design"
+  },
+  "viewMore": "View More",
+  "noMore": "Follow me for more"
 };
 export default messages;
