@@ -6,6 +6,7 @@ import FormLabel from "../../FormLabel";
 import FormInput from "../FormInput";
 import LoveIcon from "../../assets/Loveicon.svg";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ContactForm = ({ dir }) => {
   const { t } = useTranslation();
@@ -61,7 +62,13 @@ const ContactForm = ({ dir }) => {
         ></textarea>
       </div>
       <button className="btn btn-accent  text-primary shadow-md">
-        <img src={LoveIcon} className="w-6 h-6" alt="love icon" />
+        <Image
+          width={24}
+          height={24}
+          src={LoveIcon}
+          className="w-6 h-6"
+          alt="love icon"
+        />
 
         {t("contactForm.send")}
       </button>
