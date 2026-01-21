@@ -6,6 +6,6 @@ export const SendMail = async (data) => {
     { ...data },
     {
       publicKey: process.env.REACT_APP_PUBLIC_ID,
-    }
+    },
   );
 };

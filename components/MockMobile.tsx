@@ -25,7 +25,7 @@ import { cn } from "@/lib/utils";
 import { ScrollArea } from "./ui/scroll-area";
 
 export function MobileShell() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme } = useTheme();
   const [language, setLanguage] = React.useState("ar");
   const [activeTheme, setActiveTheme] = React.useState("default");
 
@@ -110,7 +110,7 @@ export function MobileShell() {
                           "w-full h-8 rounded-md flex items-center justify-center border transition-all",
                           activeTheme === t.value
                             ? "border-primary ring-1 ring-primary"
-                            : "border-transparent"
+                            : "border-transparent",
                         )}
                       >
                         <div className={cn("w-4 h-4 rounded-full", t.color)} />

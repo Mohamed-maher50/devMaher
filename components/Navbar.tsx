@@ -14,7 +14,7 @@ const MobileLanguageSwitcher = dynamic(
   {
     ssr: false,
     loading: MobileLanguageSwitcherSkeleton,
-  }
+  },
 );
 
 import React, { JSX, useState } from "react";
@@ -43,7 +43,7 @@ interface NavbarProps {
   navLinks: NavLink[];
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activeSection, navLinks }) => {
+export const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const t = useTranslations("nav");
   const [activeLink, setActiveLink] = useState("");
@@ -99,13 +99,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, navLinks }) => {
                     "transition-all rtl:font-cairo cursor-pointer",
                     activeLink == link.id.toLowerCase()
                       ? "bg-primary/10 font-sora text-primary hover:bg-primary/20"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "text-muted-foreground hover:text-foreground",
                   )}
                 >
                   <ScrollLink
                     to={link.id}
                     smooth
-                    onSetActive={(props, ele) => {
+                    onSetActive={(props) => {
                       setActiveLink(props);
                     }}
                     spy

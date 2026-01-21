@@ -10,7 +10,7 @@ import {
   Zap,
 } from "lucide-react";
 import TechStackCardSmall from "./TechStackCardSmall";
-import { Variant, Variants } from "framer-motion";
+// import { Variants } from "framer-motion";
 const smallTechStack = [
   {
     name: "React",
@@ -53,31 +53,31 @@ const smallTechStack = [
     color: "purple" as const,
   },
 ];
-const container: Variants = {
-  hidden: {
-    scale: 0,
-  },
-  show: {
-    scale: 1,
-    transition: {
-      repeat: Infinity,
-      repeatDelay: 5,
-    },
-  },
-};
+// const container: Variants = {
+//   hidden: {
+//     scale: 0,
+//   },
+//   show: {
+//     scale: 1,
+//     transition: {
+//       repeat: Infinity,
+//       repeatDelay: 5,
+//     },
+//   },
+// };
 
-const item: Variants = {
-  hidden: { opacity: 0, y: 20, scale: 1 },
-  show: {
-    scale: 1.1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.2,
-      ease: "easeOut",
-    },
-  },
-};
+// const item: Variants = {
+//   hidden: { opacity: 0, y: 20, scale: 1 },
+//   show: {
+//     scale: 1.1,
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.2,
+//       ease: "easeOut",
+//     },
+//   },
+// };
 const TechStackCardSection = () => {
   return (
     <motion.div
@@ -96,7 +96,7 @@ const TechStackCardSection = () => {
       }}
       className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-2"
     >
-      {smallTechStack.map((tech, index, array) => (
+      {smallTechStack.map((tech, index) => (
         <TechStackCardSmall
           animate={{ opacity: 1, scale: 1, x: 0 }}
           initial={{ opacity: 0, scale: 0.5, x: 50 }}

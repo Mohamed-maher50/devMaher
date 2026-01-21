@@ -23,7 +23,6 @@ interface LanguageSwitcherProps {
 
 const MobileLanguageSwitcher = ({
   currentLanguage = "en",
-  onLanguageChange,
 }: LanguageSwitcherProps) => {
   const locale = useLocale();
   const [open, setOpen] = useState(false);
@@ -67,7 +66,7 @@ const MobileLanguageSwitcher = ({
             <span
               className={cn(
                 "flex-1  text-xs font-sora  font-medium uppercase",
-                lang.code == "ar" && "font-cairo"
+                lang.code == "ar" && "font-cairo",
               )}
             >
               {lang.label}

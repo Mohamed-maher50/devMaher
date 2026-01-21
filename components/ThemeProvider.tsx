@@ -35,7 +35,7 @@ function getInitialThemeMode() {
   if (typeof window === "undefined") return false; // Handle SSR/Next.js safely
   const savedTheme = localStorage.getItem("mode");
   const systemPrefersDark = window.matchMedia(
-    "(prefers-color-scheme: dark)"
+    "(prefers-color-scheme: dark)",
   ).matches;
   if (savedTheme === "dark") return true;
   if (savedTheme === "light") return false;

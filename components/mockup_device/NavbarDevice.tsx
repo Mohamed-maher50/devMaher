@@ -83,7 +83,7 @@ export const TabletMockupNavbar = () => {
           "relative top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b w-full",
           isScrolled
             ? "bg-background/80 backdrop-blur-md border-border py-3"
-            : "bg-background/60 backdrop-blur-sm border-transparent py-4"
+            : "bg-background/60 backdrop-blur-sm border-transparent py-4",
         )}
       >
         <div className="w-full px-6 md:px-12">
@@ -113,7 +113,7 @@ export const TabletMockupNavbar = () => {
                         "relative z-10 block px-4 py-2 text-sm font-medium transition-colors rounded-md",
                         hoveredTab === item.name
                           ? "text-foreground"
-                          : "text-muted-foreground"
+                          : "text-muted-foreground",
                       )}
                     >
                       <span className="flex items-center gap-1">
@@ -122,7 +122,7 @@ export const TabletMockupNavbar = () => {
                           <ChevronDown
                             className={cn(
                               "w-3 h-3 transition-transform duration-200",
-                              hoveredTab === item.name ? "rotate-180" : ""
+                              hoveredTab === item.name ? "rotate-180" : "",
                             )}
                           />
                         )}

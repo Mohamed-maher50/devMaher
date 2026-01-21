@@ -33,7 +33,7 @@ export function ProjectCard({
   const translateY = useTransform(
     scrollYProgress,
     [0, 0.3, 0.7, 1],
-    [100, 50, -20, -50]
+    [100, 50, -20, -50],
   );
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.85]);
 
@@ -44,7 +44,7 @@ export function ProjectCard({
       "0px 0px 0px rgba(0,0,0,0.0)",
       "0px 20px 40px rgba(0,0,0,0.25)",
       "0px 5px 15px rgba(0,0,0,0.15)",
-    ]
+    ],
   );
   return (
     <div ref={ref} className="md:h-screen snap-center relative">

@@ -31,7 +31,7 @@ const MoreProject = () => {
       const data: { items: Project[]; total: number } = await client.fetch(
         query,
         { locale, start, end },
-        { cache: "force-cache" }
+        { cache: "force-cache" },
       );
       setProducts((prev) => [...prev, ...data.items]);
       setPage((prev) => prev + 1);
@@ -41,7 +41,9 @@ const MoreProject = () => {
         setHasMore(false);
       }
       setLoading(false);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <>

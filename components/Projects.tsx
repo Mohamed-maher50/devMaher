@@ -32,7 +32,7 @@ const Projects = async ({ locale }: { locale: supportedLanguages }) => {
   const data: { items: Project[]; total: number } = await client.fetch(
     query,
     { locale, start: 0, end: PRODUCT_PER_PAGE },
-    { cache: "force-cache" }
+    { cache: "force-cache" },
   );
 
   return (

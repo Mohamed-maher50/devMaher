@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, {
@@ -138,7 +139,7 @@ export const LimelightNav = ({
     <nav
       className={cn(
         "relative inline-flex items-center h-8 rounded-md bg-card text-foreground border px-1",
-        className
+        className,
       )}
       // scale the whole nav visually; the default makes it 20% bigger
       style={{
@@ -154,29 +155,32 @@ export const LimelightNav = ({
           }}
           className={cn(
             "relative z-20 flex h-full cursor-pointer items-center justify-center px-2",
-            iconContainerClassName
+            iconContainerClassName,
           )}
           onClick={() => handleItemClick(index, onClick)}
           aria-label={label}
         >
-          {cloneElement(icon as React.ReactElement<any>, {
-            className: cn(
-              // keep the original width/height classes, add transform transition
-              "w-4 h-4 transition-opacity transition-transform duration-100 ease-in-out",
-              activeIndex === index ? "opacity-100" : "opacity-40",
-              (icon.props as any)?.className || "",
-              iconClassName || ""
-            ),
-            // increase icon scale by 15%, preserving any existing inline transform
-            style: {
-              ...((icon.props as any)?.style || {}),
-              transform: `${
-                (((icon.props as any)?.style || {}) as any).transform
-                  ?.toString()
-                  .trim() || ""
-              } scale(1.15)`.trim(),
-            },
-          })}
+          {cloneElement(
+            icon as React.ReactElement<unknown>,
+            {
+              className: cn(
+                // keep the original width/height classes, add transform transition
+                "w-4 h-4 transition-opacity transition-transform duration-100 ease-in-out",
+                activeIndex === index ? "opacity-100" : "opacity-40",
+                // icon.props?.className,
+                iconClassName || "",
+              ),
+              // increase icon scale by 15%, preserving any existing inline transform
+              style: {
+                ...((icon.props as any)?.style || {}),
+                transform: `${
+                  (((icon.props as any)?.style || {}) as any).transform
+                    ?.toString()
+                    .trim() || ""
+                } scale(1.15)`.trim(),
+              },
+            } as any,
+          )}
         </button>
       ))}
 
@@ -185,7 +189,7 @@ export const LimelightNav = ({
         className={cn(
           "absolute top-0 z-10 w-8 h-[4px] rounded-full bg-primary shadow-[0_20px_10px_var(--primary)]",
           isReady ? "transition-[left] duration-300 ease-in-out" : "",
-          limelightClassName
+          limelightClassName,
         )}
         style={{ left: "-999px" }}
       >

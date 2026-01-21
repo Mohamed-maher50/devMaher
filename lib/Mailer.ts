@@ -7,6 +7,6 @@ export const SendMail = async (data: ContactFormData) => {
     { ...data },
     {
       publicKey: process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_ID!,
-    }
+    },
   );
 };

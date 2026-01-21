@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/refs */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import * as React from "react";
 export interface InfiniteScrollProps {
   isLoading: boolean;
@@ -28,7 +30,7 @@ export default function InfiniteScroll({
       let safeThreshold = threshold;
       if (threshold < 0 || threshold > 1) {
         console.warn(
-          "threshold should be between 0 and 1. You are exceed the range. will use default value: 1"
+          "threshold should be between 0 and 1. You are exceed the range. will use default value: 1",
         );
         safeThreshold = 1;
       }
@@ -47,16 +49,16 @@ export default function InfiniteScroll({
             next();
           }
         },
-        { threshold: safeThreshold, root, rootMargin }
+        { threshold: safeThreshold, root, rootMargin },
       );
       observer.current.observe(element);
     },
-    [hasMore, isLoading, next, threshold, root, rootMargin]
+    [hasMore, isLoading, next, threshold, root, rootMargin],
   );
 
   const flattenChildren = React.useMemo(
     () => React.Children.toArray(children),
-    [children]
+    [children],
   );
 
   return (
@@ -72,7 +74,7 @@ export default function InfiniteScroll({
           ? index === 0
           : index === flattenChildren.length - 1;
         const ref = isObserveTarget ? observerRef : null;
-        // @ts-ignore ignore ref type
+        // @ts-expect-error ignore ref type
         return React.cloneElement(child, { ref });
       })}
     </>

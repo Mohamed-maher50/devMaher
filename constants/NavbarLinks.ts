@@ -1,9 +1,9 @@
-export  const Links = [
+export const Links = [
   {
     label: "Home",
     link: "hero",
   },
-    {
+  {
     label: "skills",
     link: "skills",
   },

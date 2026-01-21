@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Palette, X, Plus } from "lucide-react";
-import { ColorPicker } from "./color-picker";
+import { Palette, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "./ThemeProvider";
 
@@ -35,17 +34,17 @@ export function ThemeSelector() {
   const { setThemes, themes, setSelectedTheme, selectedTheme } = useTheme();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isCreating, setIsCreating] = useState(false);
-  const [customTheme, setCustomTheme] = useState<Partial<ThemePalette> | null>(
-    null
-  );
+  // const [isCreating, setIsCreating] = useState(false);
+  // const [customTheme, setCustomTheme] = useState<Partial<ThemePalette> | null>(
+  //   null,
+  // );
 
-  const handleSaveCustomTheme = (newTheme: ThemePalette) => {
-    setThemes([...themes, newTheme]);
-    setSelectedTheme(newTheme.id);
-    setIsCreating(false);
-    setCustomTheme(null);
-  };
+  // const handleSaveCustomTheme = (newTheme: ThemePalette) => {
+  //   setThemes([...themes, newTheme]);
+  //   setSelectedTheme(newTheme.id);
+  //   setIsCreating(false);
+  //   setCustomTheme(null);
+  // };
 
   const handleDeleteTheme = (themeId: string) => {
     if (themeId.length > 0 && themeId !== "theme-light") {
@@ -202,7 +201,7 @@ function ThemeCard({
                 "aspect-square rounded-md border border-border/50 shadow-sm",
                 ["bg-primary", "bg-secondary", "bg-accent", "bg-background"][
                   key
-                ]
+                ],
               )}
               whileHover={{ scale: 1.1 }}
             />
@@ -243,4 +242,3 @@ function ThemeCard({
     </motion.div>
   );
 }
-0;

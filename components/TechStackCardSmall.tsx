@@ -39,7 +39,7 @@ const TechStackCardSmall = forwardRef<HTMLDivElement, TechStackCardSmallProps>(
         </Card>
       </motion.div>
     );
-  }
+  },
 );
 
 export default motion.create(TechStackCardSmall);
