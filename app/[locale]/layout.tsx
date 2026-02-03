@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
-import { Sora, Inter, Cairo, Tajawal } from "next/font/google";
-import "./globals.css";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
-import { routing } from "@/lib/i18n/routing";
 import ScrollProgress from "@/components/ScrollProgress";
-import { Toaster } from "@/components/ui/sonner";
 import ThemeProvider from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/sonner";
+import { routing } from "@/lib/i18n/routing";
+import type { Metadata } from "next";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { Cairo, Inter, Sora, Tajawal } from "next/font/google";
 import Head from "next/head";
+import { notFound } from "next/navigation";
+import "./globals.css";
 
 const CairoFont = Cairo({
   variable: "--font-cairo-sans",
@@ -44,6 +45,7 @@ export default async function RootLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  setRequestLocale(locale);
   const dir = locale === "ar" ? "rtl" : "ltr";
   return (
     <html className="" lang={locale} dir={dir}>

@@ -1,4 +1,3 @@
-import * as motion from "motion/react-client";
 import {
   Code2,
   Database,
@@ -9,6 +8,7 @@ import {
   Terminal,
   Zap,
 } from "lucide-react";
+import * as motion from "motion/react-client";
 import TechStackCardSmall from "./TechStackCardSmall";
 // import { Variants } from "framer-motion";
 const smallTechStack = [

@@ -17,20 +17,20 @@ const MobileLanguageSwitcher = dynamic(
   },
 );
 
-import React, { JSX, useState } from "react";
 import {
   motion,
+  useMotionValueEvent,
   useScroll,
   useSpring,
-  useMotionValueEvent,
 } from "framer-motion";
-import { cn } from "../lib/utils";
 import { useTranslations } from "next-intl";
-import { Button } from "./ui/button";
+import React, { JSX, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { MobileLanguageSwitcherSkeleton } from "./MobileLanguageSwitcher";
-import { LanguageSwitcherSkeleton } from "./LanguageSwitcher";
+import { cn } from "../lib/utils";
 import { DarkModeToggleSkeleton } from "./DarkModeTaggle";
+import { LanguageSwitcherSkeleton } from "./LanguageSwitcher";
+import { MobileLanguageSwitcherSkeleton } from "./MobileLanguageSwitcher";
+import { Button } from "./ui/button";
 export interface NavLink {
   id: string;
   label: string;
@@ -105,6 +105,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
                   <ScrollLink
                     to={link.id}
                     smooth
+                    offset={-200}
                     onSetActive={(props) => {
                       setActiveLink(props);
                     }}

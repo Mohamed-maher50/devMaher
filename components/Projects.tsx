@@ -1,12 +1,12 @@
 import { supportedLanguages } from "@/constants/locales";
-import { client } from "@/lib/sanity";
-import { Project } from "@/types";
-import { urlFor } from "@/lib/utils";
-import HeadingLamp from "./LampHeading";
-import ScrollElementProvider from "./ScrollElementProvider";
-import { ProjectCard as ProductCardv1 } from "./ProductCard";
-import MoreProject from "./MoreProject";
 import { PRODUCT_PER_PAGE } from "@/constants/products";
+import { client } from "@/lib/sanity";
+import { urlFor } from "@/lib/utils";
+import { Project } from "@/types";
+import HeadingLamp from "./LampHeading";
+import MoreProject from "./MoreProject";
+import { ProjectCard as ProductCardv1 } from "./ProductCard";
+import ScrollElementProvider from "./ScrollElementProvider";
 export const query = `
 {
   "items": *[_type == "projects"]
@@ -36,9 +36,9 @@ const Projects = async ({ locale }: { locale: supportedLanguages }) => {
   );
 
   return (
-    <ScrollElementProvider name="projects">
-      <section className="flex flex-col my-30">
-        <HeadingLamp />
+    <section className="flex flex-col my-30">
+      <HeadingLamp />
+      <ScrollElementProvider name="projects">
         <div className="pt-44 grid grid-cols-1  gap-5 sm:grid-cols-2 md:grid-cols-1">
           {data.items.map((p) => {
             return (
@@ -55,8 +55,8 @@ const Projects = async ({ locale }: { locale: supportedLanguages }) => {
           })}
           <MoreProject />
         </div>
-      </section>
-    </ScrollElementProvider>
+      </ScrollElementProvider>
+    </section>
   );
 };
 

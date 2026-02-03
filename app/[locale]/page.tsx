@@ -1,20 +1,20 @@
+import { ContactSection } from "@/components/ContactSection";
 import { HeroSection } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
-import { ThemeSelector } from "@/components/ThemeSelector";
-import { UserProfile } from "@/types";
-import { getTranslations } from "next-intl/server";
-import { Suspense } from "react";
-import * as motion from "motion/react-client";
-import { Cpu, FolderKanban, HomeIcon } from "lucide-react";
-import TabletMockup from "@/components/TabletMockup";
 import Projects from "@/components/Projects";
-import { supportedLanguages } from "@/constants/locales";
-import ScrollElementProvider from "@/components/ScrollElementProvider";
-import { ContactSection } from "@/components/ContactSection";
 import { SuspenseProjectSkeletons } from "@/components/ProjectSkeleton";
-import { Metadata } from "next";
-import Head from "next/head";
+import ScrollElementProvider from "@/components/ScrollElementProvider";
+import TabletMockup from "@/components/TabletMockup";
 import TechStackCardSection from "@/components/TechStackCardSection";
+import { ThemeSelector } from "@/components/ThemeSelector";
+import { locales, supportedLanguages } from "@/constants/locales";
+import { UserProfile } from "@/types";
+import { Cpu, FolderKanban, HomeIcon } from "lucide-react";
+import * as motion from "motion/react-client";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import Head from "next/head";
+import { Suspense } from "react";
 const navbarLinks = [
   {
     Icon: <HomeIcon />,
@@ -38,7 +38,7 @@ const navbarLinks = [
 type MetadataProps = {
   locale: supportedLanguages;
 };
-
+export const dynamic = "force-static";
 export async function generateMetadata({}: {
   params: Promise<MetadataProps>;
 }): Promise<Metadata> {
@@ -86,7 +86,9 @@ export async function generateMetadata({}: {
     },
   };
 }
-
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale: locale }));
+}
 export default async function Home({
   params,
 }: {
@@ -108,19 +110,21 @@ export default async function Home({
         </ScrollElementProvider>
 
         {/* Tech Stack Grid - Small Cards */}
-        <div className="my-24">
-          <motion.h2
-            className="text-4xl rtl:font-cairo font-sora md:text-5xl font-bold text-center mb-16 text-balance"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {t("skills:title")}
-          </motion.h2>
+        <ScrollElementProvider name="skills">
+          <div className="my-24">
+            <motion.h2
+              className="text-4xl rtl:font-cairo font-sora md:text-5xl font-bold text-center mb-16 text-balance"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              {t("skills:title")}
+            </motion.h2>
 
-          <TechStackCardSection />
-        </div>
+            <TechStackCardSection />
+          </div>
+        </ScrollElementProvider>
         {/* <SkillsSection /> */}
         <TabletMockup />
         {/* <MobileShell /> */}
