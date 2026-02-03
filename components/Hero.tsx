@@ -1,14 +1,14 @@
-import React from "react";
-import * as motion from "motion/react-client";
-import { Github, Linkedin, Mail, MapPin, Download } from "lucide-react";
-import { UserProfile } from "@/types";
-import Image from "next/image";
-import { getTranslations } from "next-intl/server";
 import Hero from "@/assets/images/hero.webp";
-import NetworkBackground from "./NetworkAnimation";
+import { UserProfile } from "@/types";
+import { Download, Github, Linkedin, MapPin } from "lucide-react";
+import * as motion from "motion/react-client";
+import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import React from "react";
 import { Whatsapp } from "./icons/Index";
+import NetworkBackground from "./NetworkAnimation";
+import { Button } from "./ui/button";
 interface HeroSectionProps {
   profile: UserProfile;
 }
@@ -84,9 +84,7 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                   className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-sm"
                 >
                   <Link
-                    href={
-                      "/mohamed _maher_Abdelaziz_Front_end_developer _resume.pdf"
-                    }
+                    href={"/Mohamed-Maher-Resume.pdf"}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="download cv link"
@@ -95,7 +93,7 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                     <Download className="w-4 h-4" />
                   </Link>
                 </Button>
-                <Button
+                {/* <Button
                   asChild
                   size={"lg"}
                   aria-label="send email button"
@@ -103,12 +101,12 @@ export const HeroSection: React.FC<HeroSectionProps> = async ({ profile }) => {
                 >
                   <Link
                     aria-label="send email link"
-                    href={`mailto:mohamedmaher.mm330@gmail.com`}
+                    href={`mailto:maher.dev.js@gmail.com`}
                     rel="noopener noreferrer"
                   >
                     <Mail className="w-4 h-4" />
                   </Link>
-                </Button>
+                </Button> */}
                 <Button
                   asChild
                   size={"lg"}
