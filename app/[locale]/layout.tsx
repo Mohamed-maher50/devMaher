@@ -1,5 +1,6 @@
 import ScrollProgress from "@/components/ScrollProgress";
 import ThemeProvider from "@/components/ThemeProvider";
+import { ThemeSelector } from "@/components/ThemeSelector";
 import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/lib/i18n/routing";
 import type { Metadata } from "next";
@@ -57,6 +58,7 @@ export default async function RootLayout({ children, params }: Props) {
         </Head>
         <NextIntlClientProvider>
           <ThemeProvider>
+            <ThemeSelector />
             {/* <LanguageSwitcher /> */}
             {children}
             <ScrollProgress />

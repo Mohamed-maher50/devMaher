@@ -1,4 +1,7 @@
 "use client";
+import FillAnimation from "@/public/animations/Liquid Transition Screen.json";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -31,113 +34,145 @@ const defaultThemes: ThemePalette[] = [
 ];
 
 export function ThemeSelector() {
+  const lottieRef = useRef<LottieRefCurrentProps | null>(null);
   const { setThemes, themes, setSelectedTheme, selectedTheme } = useTheme();
-
   const [isOpen, setIsOpen] = useState(false);
-  // const [isCreating, setIsCreating] = useState(false);
-  // const [customTheme, setCustomTheme] = useState<Partial<ThemePalette> | null>(
-  //   null,
-  // );
-
-  // const handleSaveCustomTheme = (newTheme: ThemePalette) => {
-  //   setThemes([...themes, newTheme]);
-  //   setSelectedTheme(newTheme.id);
-  //   setIsCreating(false);
-  //   setCustomTheme(null);
-  // };
+  const [animationChange, setAnimationChange] = useState(false);
 
   const handleDeleteTheme = (themeId: string) => {
     if (themeId.length > 0 && themeId !== "theme-light") {
       setThemes(themes.filter((t) => t.id !== themeId));
-      if (selectedTheme === themeId) {
-        setSelectedTheme("theme-light");
-      }
+      setTimeout(() => {
+        if (selectedTheme === themeId) {
+          setSelectedTheme("theme-light");
+        }
+      }, 100);
     }
+  };
+  const onSelectTheme = (themeid: string) => {
+    setTimeout(() => {
+      setSelectedTheme(themeid);
+      setIsOpen(false);
+    }, 1500);
+    setAnimationChange(true);
   };
 
   return (
-    <div className="relative ">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-br from-background via-background to-accent/5 pointer-events-none" />
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="theme pallet"
-        className="  fixed bottom-5 right-5  z-10 flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <Palette size={20} />
-      </motion.button>
-
-      {/* Menu overlay and content */}
+    <>
       <AnimatePresence>
-        {isOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+        {animationChange && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }} // مدة الاختفاء
+            className="fixed inset-0 z-[60] pointer-events-none"
+          >
+            <Lottie
+              lottieRef={lottieRef}
+              loop={false}
+              animationData={FillAnimation}
+              onSegmentStart={() => {
+                console.log("first");
+              }}
+              onComplete={() => {
+                setAnimationChange(false);
+              }}
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+              rendererSettings={{
+                preserveAspectRatio: "xMidYMid slice", // Cover (crop sides)
+              }}
+              className="fixed  top-0 left-0 right-0 bottom-0 z-[60]! h-screen w-screen  pointer-events-none "
             />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-            {/* Menu container */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: -20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -20 }}
-              transition={{ type: "spring", damping: 20, stiffness: 300 }}
-              className="fixed z-50 left-1/2 top-1/2  max-sm:max-w-10/12 sm:w-2/3 -translate-y-1/2 -translate-x-1/2 w-full max-w-2xl bg-card border border-border rounded-2xl shadow-2xl "
-            >
-              <div className="p-6">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-bold text-foreground">
-                    Choose Your Theme
-                  </h2>
-                  <motion.button
-                    onClick={() => setIsOpen(false)}
-                    whileHover={{ rotate: 90 }}
-                    className="text-muted-foreground  hover:text-foreground transition-colors"
-                  >
-                    <X size={24} />
-                  </motion.button>
-                </div>
+      <div className="relative ">
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-br from-background via-background to-accent/5 pointer-events-none" />
+        <motion.button
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="theme pallet"
+          className="  fixed bottom-5 right-5  z-10 flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Palette size={20} />
+        </motion.button>
 
-                {/* Preset themes grid */}
-                <div className="mb-6">
-                  <p className="text-sm font-semibold text-muted-foreground mb-4">
-                    Preset Themes
-                  </p>
-                  <div className="grid grid-cols-2  text-center justify-center max-sm:place-items-center w-full items-center md:grid-cols-4 gap-6">
-                    <AnimatePresence mode="popLayout">
-                      {defaultThemes.map((theme) => (
-                        <div key={theme.id} className={cn(theme.id, "")}>
-                          <motion.div
-                            key={theme.id}
-                            layout
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            transition={{ type: "spring", damping: 20 }}
-                          >
-                            <ThemeCard
-                              theme={theme}
-                              selectedTheme={selectedTheme}
-                              isSelected={selectedTheme === theme.id}
-                              onSelect={() => setSelectedTheme(theme.id)}
-                              onDelete={() => handleDeleteTheme(theme.id)}
-                            />
-                          </motion.div>
-                        </div>
-                      ))}
-                    </AnimatePresence>
+        {/* Menu overlay and content */}
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsOpen(false)}
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+              />
+
+              {/* Menu container */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                transition={{ type: "spring", damping: 20, stiffness: 300 }}
+                className="fixed z-50 left-1/2 top-1/2  max-sm:max-w-10/12 sm:w-2/3 -translate-y-1/2 -translate-x-1/2 w-full max-w-2xl bg-card border border-border rounded-2xl shadow-2xl "
+              >
+                <div className="p-6">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-bold text-foreground">
+                      Choose Your Theme
+                    </h2>
+                    <motion.button
+                      onClick={() => setIsOpen(false)}
+                      whileHover={{ rotate: 90 }}
+                      className="text-muted-foreground  hover:text-foreground transition-colors"
+                    >
+                      <X size={24} />
+                    </motion.button>
                   </div>
-                </div>
 
-                {/* Create custom theme button */}
-                {/* <motion.button
+                  {/* Preset themes grid */}
+                  <div className="mb-6">
+                    <p className="text-sm font-semibold text-muted-foreground mb-4">
+                      Preset Themes
+                    </p>
+                    <div className="grid grid-cols-2  text-center justify-center max-sm:place-items-center w-full items-center md:grid-cols-4 gap-6">
+                      <AnimatePresence mode="popLayout">
+                        {defaultThemes.map((theme) => (
+                          <div key={theme.id} className={cn(theme.id, "")}>
+                            <motion.div
+                              key={theme.id}
+                              layout
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.8 }}
+                              transition={{ type: "spring", damping: 20 }}
+                            >
+                              <ThemeCard
+                                theme={theme}
+                                selectedTheme={selectedTheme}
+                                isSelected={selectedTheme === theme.id}
+                                onSelect={() => onSelectTheme(theme.id)}
+                                onDelete={() => handleDeleteTheme(theme.id)}
+                              />
+                            </motion.div>
+                          </div>
+                        ))}
+                      </AnimatePresence>
+                    </div>
+                  </div>
+
+                  {/* Create custom theme button */}
+                  {/* <motion.button
                   onClick={() => setIsCreating(true)}
                   className="w-full py-3 border-2 border-dashed border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-colors flex items-center justify-center gap-2 text-foreground font-semibold"
                   whileHover={{ scale: 1.02 }}
@@ -146,14 +181,14 @@ export function ThemeSelector() {
                   <Plus size={20} />
                   Create Custom Theme
                 </motion.button> */}
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
 
-      {/* Custom theme creator modal */}
-      {/* <AnimatePresence>
+        {/* Custom theme creator modal */}
+        {/* <AnimatePresence>
         {isCreating && (
           <ColorPicker
             onSave={handleSaveCustomTheme}
@@ -164,7 +199,8 @@ export function ThemeSelector() {
           />
         )}
       </AnimatePresence> */}
-    </div>
+      </div>
+    </>
   );
 }
 

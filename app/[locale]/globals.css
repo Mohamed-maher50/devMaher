@@ -51,6 +51,7 @@
 
 :root,
 .theme-light {
+  --cursor-hand: url("/click.png");
   --cursor-custom:
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 24"><path fill="%231C1917" stroke="%23E5E5E5" stroke-width="1.5" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'),
     auto;
@@ -61,7 +62,7 @@
   --card-foreground: oklch(0.147 0.004 49.25);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.147 0.004 49.25);
-  --primary: oklch(0.216 0.006 56.043);
+  --primary: rgb(28, 25, 23);
   --primary-foreground: oklch(0.985 0.001 106.423);
   --secondary: oklch(0.97 0.001 106.424);
   --secondary-foreground: oklch(0.216 0.006 56.043);
@@ -126,14 +127,15 @@
 }
 
 @layer base {
+
   button:not(:disabled),
   [role="button"]:not(:disabled) {
-    cursor: var(--cursor-hand), auto;
+    cursor: var(--cursor-hand), auto !important;
   }
 
   a:not(:disabled),
   [role="link"]:not(:disabled) {
-    cursor: var(--cursor-hand), auto;
+    cursor: var(--cursor-hand), auto !important;
   }
 
   * {
@@ -190,7 +192,7 @@
     --card-foreground: oklch(0.985 0 0);
     --popover: oklch(0.21 0.006 285.885);
     --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.648 0.2 131.684);
+    --primary: rgb(94, 165, 0);
     --primary-foreground: oklch(0.986 0.031 120.757);
     --secondary: oklch(0.274 0.006 286.033);
     --secondary-foreground: oklch(0.985 0 0);
@@ -227,7 +229,7 @@
     --card-foreground: oklch(0.3015 0.0572 282.4176);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.3015 0.0572 282.4176);
-    --primary: oklch(0.5417 0.179 288.0332);
+    --primary: rgb(110, 86, 207);
     --primary-foreground: oklch(1 0 0);
     --secondary: oklch(0.9174 0.0435 292.6901);
     --secondary-foreground: oklch(0.4143 0.1039 288.1742);

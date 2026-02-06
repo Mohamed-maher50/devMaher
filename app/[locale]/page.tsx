@@ -6,7 +6,6 @@ import { SuspenseProjectSkeletons } from "@/components/ProjectSkeleton";
 import ScrollElementProvider from "@/components/ScrollElementProvider";
 import TabletMockup from "@/components/TabletMockup";
 import TechStackCardSection from "@/components/TechStackCardSection";
-import { ThemeSelector } from "@/components/ThemeSelector";
 import { locales, supportedLanguages } from "@/constants/locales";
 import { UserProfile } from "@/types";
 import { Cpu, FolderKanban, HomeIcon } from "lucide-react";
@@ -131,7 +130,7 @@ export default async function Home({
         <Suspense fallback={<SuspenseProjectSkeletons />}>
           <Projects locale={locale} />
         </Suspense>
-        <ThemeSelector />
+
         <ScrollElementProvider name="contact">
           <ContactSection />
         </ScrollElementProvider>
