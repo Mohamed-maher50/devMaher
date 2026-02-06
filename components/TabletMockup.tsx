@@ -1,18 +1,21 @@
-import { LimelightNav } from "./ui/shadcn-io/limelight-nav";
-import { TabletMockupNavbar } from "./mockup_device/NavbarDevice";
-import * as motion from "motion/react-client";
 import { ArrowRight } from "lucide-react";
+import * as motion from "motion/react-client";
+import { TabletMockupNavbar } from "./mockup_device/NavbarDevice";
+import { LimelightNav } from "./ui/shadcn-io/limelight-nav";
 
 function TabletMockup() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 100, scale: 0.5 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{
         duration: 1,
         ease: "circOut",
       }}
       viewport={{ once: true, amount: 0.5 }}
+      exit={{
+        y: 500,
+      }}
       className="relative isolate mx-auto w-full border-default bg-base border-16 rounded-t-xl md:max-w-10/12"
     >
       <TabletMockupNavbar />

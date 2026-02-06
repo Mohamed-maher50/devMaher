@@ -1,10 +1,10 @@
 "use client";
 
+import { SKILLS } from "@/constants";
 import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import ScrollElementProvider from "./ScrollElementProvider";
-import { SKILLS } from "@/constants";
 
 export function SkillsSection() {
   const t = useTranslations();
@@ -90,7 +90,7 @@ export function SkillsSection() {
             {SKILLS.map((skillGroup, categoryIdx) => (
               <motion.div
                 key={skillGroup.localeCategory}
-                className="space-y-6 p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors cursor-pointer"
+                className="space-y-6 p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors "
                 custom={categoryIdx}
                 variants={categoryVariants}
                 initial="hidden"

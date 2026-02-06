@@ -2,13 +2,13 @@
 import { Project } from "@/types";
 import React from "react";
 
-import { client } from "@/lib/sanity";
-import { useLocale, useTranslations } from "next-intl";
-import { urlFor } from "@/lib/utils";
-import { ProjectCard as ProductCardv1 } from "./ProductCard";
-import { Button } from "./ui/button";
 import { PRODUCT_PER_PAGE } from "@/constants/products";
+import { client } from "@/lib/sanity";
+import { urlFor } from "@/lib/utils";
+import { useLocale, useTranslations } from "next-intl";
+import { ProjectCard as ProductCardv1 } from "./ProductCard";
 import { query } from "./Projects";
+import { Button } from "./ui/button";
 
 const MoreProject = () => {
   const t = useTranslations();
@@ -64,7 +64,7 @@ const MoreProject = () => {
         onClick={next}
         variant={"ghost"}
         hidden={!hasMore || loading}
-        className="w-fit mx-auto cursor-pointer capitalize"
+        className="w-fit mx-auto  capitalize"
         size={"sm"}
       >
         {t("viewMore")}

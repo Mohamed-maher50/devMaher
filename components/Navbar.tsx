@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
     >
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div
-          className="flex items-center gap-2 cursor-pointer group"
+          className="flex items-center gap-2  group"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
                   variant={activeLink === link.id ? "secondary" : "ghost"}
                   asChild
                   className={cn(
-                    "transition-all rtl:font-cairo cursor-pointer",
+                    "transition-all rtl:font-cairo ",
                     activeLink == link.id.toLowerCase()
                       ? "bg-primary/10 font-sora text-primary hover:bg-primary/20"
                       : "text-muted-foreground hover:text-foreground",
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
 
           <Button
             asChild
-            className="cursor-pointer rtl:font-cairo font-sora xs:inline-flex shadow-sm"
+            className=" rtl:font-cairo font-sora xs:inline-flex shadow-sm"
           >
             <ScrollLink step={2} smooth to="contact">
               {t("sections.contact")}

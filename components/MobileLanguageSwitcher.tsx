@@ -1,19 +1,19 @@
 "use client";
 
-import { useState } from "react";
-import { Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "@/lib/i18n/navigation";
-import { useLocale } from "next-intl";
 import { EXTENDED_LANGUAGES, supportedLanguages } from "@/constants/locales";
-import Cookies from "js-cookie";
+import { useRouter } from "@/lib/i18n/navigation";
 import { cn } from "@/lib/utils";
+import Cookies from "js-cookie";
+import { Globe } from "lucide-react";
+import { useLocale } from "next-intl";
+import { useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 
 interface LanguageSwitcherProps {
@@ -59,7 +59,6 @@ const MobileLanguageSwitcher = ({
               onChange(lang.code);
               setOpen(false);
             }}
-            className="cursor-pointer"
             aria-current={currentLanguage === lang.code ? "page" : undefined}
           >
             <span className="mr-2 uppercase">{lang.code}</span>

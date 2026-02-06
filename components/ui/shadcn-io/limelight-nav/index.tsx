@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import { cn } from "@/lib/utils";
 import React, {
-  useState,
-  useRef,
-  useLayoutEffect,
   cloneElement,
   useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
 } from "react";
-import { cn } from "@/lib/utils";
 
 const DefaultHomeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -154,7 +154,7 @@ export const LimelightNav = ({
             navItemRefs.current[index] = el;
           }}
           className={cn(
-            "relative z-20 flex h-full cursor-pointer items-center justify-center px-2",
+            "relative z-20 flex h-full  items-center justify-center px-2",
             iconContainerClassName,
           )}
           onClick={() => handleItemClick(index, onClick)}

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Palette, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { Palette, X } from "lucide-react";
+import { useState } from "react";
 import { useTheme } from "./ThemeProvider";
 
 export interface ThemePalette {
@@ -62,7 +62,7 @@ export function ThemeSelector() {
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         aria-label="theme pallet"
-        className="  fixed bottom-5 right-5 cursor-pointer z-10 flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow"
+        className="  fixed bottom-5 right-5  z-10 flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -184,7 +184,7 @@ function ThemeCard({
   return (
     <motion.div
       onClick={onSelect}
-      className={`relative cursor-pointer max-sm:size-32 grid gap-1.5 group p-4 rounded-lg border-2 transition-all ${
+      className={`relative  max-sm:size-32 grid gap-1.5 group p-4 rounded-lg border-2 transition-all ${
         isSelected
           ? "border-primary bg-primary/10"
           : "border-border hover:border-primary/50"

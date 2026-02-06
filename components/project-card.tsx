@@ -1,12 +1,12 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
-import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { useRef } from "react";
 export interface ProjectCardProps {
   title: string;
   description: string;
@@ -113,7 +113,7 @@ export function ProjectCard({
             <Button
               variant="outline"
               size="lg"
-              className="mt-6 font-sora rtl:font-cairo cursor-pointer rounded-full "
+              className="mt-6 font-sora rtl:font-cairo  rounded-full "
               asChild
             >
               <Link href={link} target="_blank">
