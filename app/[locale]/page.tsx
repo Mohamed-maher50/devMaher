@@ -76,7 +76,7 @@ export async function generateMetadata({}: {
       url: process.env.NEXT_PUBLIC_SITE_URL,
       images: [
         {
-          url: `https://ogcdn.net/877a65a0-8fb5-4103-8c58-fe4c8b199f24/v1/Mohamed%20Maher%20%20Frontend%20Developer/https%3A%2F%2Fopengraph.b-cdn.net%2Fproduction%2Fimages%2Fc09524d4-b367-4b3e-86c6-4223c7519ae2.png%3Ftoken%3DC-qmZHcfjKhQlQFFP9ABXiLw0O99z8TUAZTqEXFgmzg%26height%3D1024%26width%3D1024%26expires%3D33301194964/Contact%20Me/rgb(224%2C%2030%2C%2030)/og.png`,
+          url: `https://ogcdn.net/74914e2a-cefe-4248-a5ed-415339b285c1/v2/Front%20End%20Developer%20/Mohamed%20Maher/https%3A%2F%2Fopengraph.b-cdn.net%2Fproduction%2Fimages%2F9430641d-dcd9-4862-9e60-893ba3f4c933.png%3Ftoken%3DFh-2v3FHDStzV8Mc2clJsY_GL0e0uJy9U4jEjWgQ8Cg%26height%3D1200%26width%3D1200%26expires%3D33306461063/%23000000/og.png`,
           width: 1200,
           height: 630,
         },
