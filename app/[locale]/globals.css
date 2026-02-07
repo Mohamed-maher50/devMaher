@@ -127,6 +127,10 @@
 }
 
 @layer base {
+  ::selection {
+    background-color: var(--secondary-foreground);
+    color: var(--secondary);
+  }
 
   button:not(:disabled),
   [role="button"]:not(:disabled) {

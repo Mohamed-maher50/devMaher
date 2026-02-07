@@ -54,7 +54,7 @@ export default async function RootLayout({ children, params }: Props) {
         className={`${CairoFont.variable} ${InterFont.variable} ${TajawalFont.variable} antialiased font-Tajawal ${SoraFont.variable}`}
       >
         <Head>
-          <meta name="apple-mobile-web-app-title" content="DevMaher" />
+          <meta name="apple-mobile-web-app-title" content="DEV Maher" />
         </Head>
         <NextIntlClientProvider>
           <ThemeProvider>
